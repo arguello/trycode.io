@@ -34,7 +34,8 @@
                  [sandbox-error-output 'string]
                  [sandbox-propagate-exceptions #f]
                  [sandbox-eval-limits (list 10 50)]
-                 [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
+                 [sandbox-path-permissions '((read #rx#"racket-prefs.rktd")
+                                             (read #rx#"org.racket-lang.prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base
                        #:requires `(pict
@@ -118,17 +119,17 @@
 
 ;; Links page
 (define (links request)
-    (make-response
-     (include-template "templates/links.html"))) 
+  (make-response
+   (include-template "templates/links.html"))) 
 
 ;; About page
 (define (about request)
-    (make-response
-     (include-template "templates/about.html"))) 
+  (make-response
+   (include-template "templates/about.html"))) 
 
 ;; Home page
 (define (home request)
-    (home-with (make-ev) request))
+  (home-with (make-ev) request))
   
 (define (home-with ev request) 
   (local [(define (response-generator embed/url)
@@ -137,11 +138,11 @@
                   )
               (make-response
                (include-template "templates/home.html"))))
-            (define (next-eval request)
-              (eval-with ev request))
-            ;(define (next-complete request)(complete-with ev request))
-            ]
-      (send/suspend/dispatch response-generator)))
+          (define (next-eval request)
+            (eval-with ev request))
+          ;(define (next-complete request)(complete-with ev request))
+          ]
+    (send/suspend/dispatch response-generator)))
 
 ;; string string -> jsexpr
 (define (json-error expr msg)
@@ -154,12 +155,12 @@
 ;; string eval-result -> jsexpr
 (define (result-json expr lst)
    (match lst
-     ((list res #f #f) 
-      (json-result expr res))
-     ((list res out #f) 
-      (json-result expr (string-append out res)))
-     ((list _ _ err)
-      (json-error expr err))))
+     [(list res #f #f) 
+      (json-result expr res)]
+     [(list res out #f) 
+      (json-result expr (string-append out res))]
+     [(list _ _ err)
+      (json-error expr err)]))
 
 
 ;(module+ test
@@ -181,14 +182,26 @@
 ;   (eval-result-to-json "(begin (display \"6 + \") \"6\")") "\"6 + \\\"6\\\"\"")
 ;)  
 
+;; this variable will be mutated with set! within eval-with
+(define prev-str "")
+
 ;; Eval handler
 (define (eval-with ev request) 
   (define bindings (request-bindings request))
   (cond [(exists-binding? 'expr bindings)
          (let ([expr (extract-binding/single 'expr bindings)])
-           (make-response 
-            #:mime-type APPLICATION/JSON-MIME-TYPE
-            (jsexpr->json (result-json expr (run-code ev expr)))))]
+           (define str (string-append prev-str (if (string? expr) expr (~s expr))))
+           (cond [(with-handlers ([exn:fail:read:eof? (λ (e) #f)])
+                    (read (open-input-string str)) #t)
+                  (set! prev-str "")
+                  (make-response
+                   #:mime-type APPLICATION/JSON-MIME-TYPE
+                   (jsexpr->json (result-json str (run-code ev str))))]
+                 [else
+                  (set! prev-str (string-append str "\n"))
+                  (make-response
+                   #:mime-type APPLICATION/JSON-MIME-TYPE
+                   (jsexpr->json (hasheq "newline" #t)))]))]
          [(exists-binding? 'complete bindings)
           (let ([str (extract-binding/single 'complete bindings)])
             (make-response 

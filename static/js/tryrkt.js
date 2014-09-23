@@ -165,11 +165,6 @@ function onHandle(line, report) {
         return [{msg: data.message, className: "jquery-console-message-error"}];
     }
     
-    if (data.newline) {
-        // FIXME: how can I make it so that a new prompt doesn't appear?
-        return [{msg: "", newPrompt: false}];
-    }
-    
     // handle page
     if (currentPage >= 0 && pageExitConditions[currentPage].verify(data)) {
   			goToPage(currentPage + 1);

@@ -34,6 +34,7 @@
                  [sandbox-error-output 'string]
                  [sandbox-propagate-exceptions #f]
                  [sandbox-eval-limits (list 10 50)]
+                 [sandbox-memory-limit 30]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base

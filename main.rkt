@@ -33,7 +33,6 @@
   (parameterize ([sandbox-output 'string]
                  [sandbox-error-output 'string]
                  [sandbox-propagate-exceptions #f]
-                 [sandbox-gui-available #f]
                  [sandbox-memory-limit 30]
                  [sandbox-eval-limits (list 5 30)]
                  [sandbox-namespace-specs (let ([specs(sandbox-make-namespace)])

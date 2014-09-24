@@ -33,18 +33,21 @@
   (parameterize ([sandbox-output 'string]
                  [sandbox-error-output 'string]
                  [sandbox-propagate-exceptions #f]
-                 [sandbox-eval-limits (list 10 50)]
+                 [sandbox-gui-available #f]
+                 [sandbox-memory-limit 30]
+                 [sandbox-eval-limits (list 5 30)]
+                 [sandbox-namespace-specs (list (sandbox-make-namespace)
+                                                pict
+                                                pict/flash
+                                                pict/code
+                                                ,autocomplete
+                                                (planet schematics/random:1:0/random)
+                                                (planet dherman/json:4:=0)
+                                                file/convertible
+                                                net/base64)]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
-       (make-evaluator 'racket/base
-                       #:requires `(pict
-                                    pict/flash
-                                    pict/code
-                                    ,autocomplete
-                                    (planet schematics/random:1:0/random)
-                                    (planet dherman/json:4:=0)
-                                    file/convertible
-                                    net/base64))))))
+       (make-evaluator 'racket/base)))))
 
 
 (define (run-code ev str)
@@ -241,7 +244,8 @@
  #:servlet-regexp #rx""
  #:extra-files-paths (list static)
  #:servlet-path "/"
- #:manager mgr)
+ #:manager mgr
+ #:log-file "try-racket-serve-log.txt")
 
 
 

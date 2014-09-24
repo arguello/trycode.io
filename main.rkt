@@ -36,15 +36,15 @@
                  [sandbox-gui-available #f]
                  [sandbox-memory-limit 30]
                  [sandbox-eval-limits (list 5 30)]
-                 [sandbox-namespace-specs (list (sandbox-make-namespace)
-                                                pict
-                                                pict/flash
-                                                pict/code
-                                                ,autocomplete
-                                                (planet schematics/random:1:0/random)
-                                                (planet dherman/json:4:=0)
-                                                file/convertible
-                                                net/base64)]
+                 [sandbox-namespace-specs (cons (sandbox-make-namespace)
+                                                (list pict
+                                                      pict/flash
+                                                      pict/code
+                                                      ,autocomplete
+                                                      (planet schematics/random:1:0/random)
+                                                      (planet dherman/json:4:=0)
+                                                      file/convertible
+                                                      net/base64))]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base)))))

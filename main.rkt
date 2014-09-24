@@ -38,7 +38,7 @@
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base
-                       #:require `(pict
+                       #:requires `(pict
                                    pict/flash
                                    pict/code
                                    ,autocomplete

@@ -35,7 +35,7 @@
                  [sandbox-propagate-exceptions #f]
                  [sandbox-memory-limit 30]
                  [sandbox-eval-limits (list 5 30)]
-                 [sandbox-namespace-specs (let ([specs(sandbox-make-namespace)])
+                 [sandbox-namespace-specs (let ([specs (make-base-namespace)])
                                                 `(,(car specs)
                                                   ,@(cdr specs)
                                                   pict

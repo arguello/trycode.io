@@ -35,20 +35,17 @@
                  [sandbox-propagate-exceptions #f]
                  [sandbox-memory-limit 30]
                  [sandbox-eval-limits (list 5 30)]
-                 [sandbox-namespace-specs (let ([specs (make-base-namespace)])
-                                                `(,(car specs)
-                                                  ,@(cdr specs)
-                                                  pict
-                                                  pict/flash
-                                                  pict/code
-                                                  ,autocomplete
-                                                  (planet schematics/random:1:0/random)
-                                                  (planet dherman/json:4:=0)
-                                                  file/convertible
-                                                  net/base64))]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
-       (make-evaluator 'racket/base)))))
+       (make-evaluator 'racket/base
+                       #:require `(pict
+                                   pict/flash
+                                   pict/code
+                                   ,autocomplete
+                                   (planet schematics/random:1:0/random)
+                                   (planet dherman/json:4:=0)
+                                   file/convertible
+                                   net/base64))))))
 
 
 (define (run-code ev str)

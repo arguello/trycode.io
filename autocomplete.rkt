@@ -1,5 +1,6 @@
 #lang racket/base
 
+(require racket/list)
 (provide namespace-completion)
 
 ;;------------------------------------------------------------------
@@ -26,11 +27,14 @@
       last-bstrs)))
 
 (define (namespace-completion pat)
-  (let* ([pat (if (string? pat) (string->bytes/utf-8 pat) pat)]
-         [pat (regexp-quote pat)]
-         [pat (regexp-replace* #px#"(\\w)\\b" pat #"\\1\\\\w*")]
-         [pat (byte-pregexp (bytes-append #"^" pat))])
-    (map bytes->string/utf-8 (filter (lambda (bstr) 
-                                       (regexp-match pat bstr))
-                                     (get-namespace-bstrings)))))
+  (define r (regexp-match #px"(\\w|[-])*$" pat))
+  (and r
+       (let* ([pat (first r)]
+              [pat (if (string? pat) (string->bytes/utf-8 pat) pat)]
+              [pat (regexp-quote pat)]
+              [pat (regexp-replace* #px#"(\\w)\\b" pat #"\\1\\\\w*")]
+              [pat (byte-pregexp (bytes-append #"^" pat))])
+         (map bytes->string/utf-8 (filter (lambda (bstr) 
+                                            (regexp-match pat bstr))
+                                          (get-namespace-bstrings))))))
 

@@ -138,6 +138,8 @@ function onValidate(input) {
 
 function onComplete(line) {
     var input = $.trim(line);
+    // get the prefix that won't be completed
+    var prefix = line.replace(RegExp("(\\w|[-])*$"), "");
     var data = complete_racket(input);
 
     // handle error
@@ -145,8 +147,13 @@ function onComplete(line) {
         controller.commandResult(data.message, "jquery-console-message-error");
         return [];
     }
-    else
-        return JSON.parse(data.result);
+    else {
+        var res = JSON.parse(data.result);
+        for (var i = 0; i<res.length; i++) {
+            res[i] = prefix+res[i];
+        }
+        return res;
+    }
 }
     
 

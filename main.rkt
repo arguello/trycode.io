@@ -6,10 +6,12 @@
           web-server/http
           racket/sandbox
           json
+          racket/format
           racket/runtime-path
           web-server/managers/lru
           web-server/managers/manager
           file/convertible
+          net/base64
 ;          racket/gui/base ; ensures that `make-ev` does not try to instantiate it multiple times
           "autocomplete.rkt"
           )
@@ -35,27 +37,32 @@
                  [sandbox-propagate-exceptions #f]
                  [sandbox-memory-limit 30]
                  [sandbox-eval-limits (list 5 30)]
+                 [sandbox-namespace-specs
+                  (append (sandbox-namespace-specs)
+                          `(file/convertible
+                            json))]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base
                        #:requires `(pict
-                                   pict/flash
-                                   pict/code
-                                   ,autocomplete
-                                   (planet schematics/random:1:0/random)
-                                   json
-                                   file/convertible
-                                   net/base64))))))
+                                    pict/flash
+                                    pict/code
+                                    file/convertible
+                                    json
+                                    ,autocomplete
+                                    (planet schematics/random:1:0/random)))))))
 
 
 (define (run-code ev str)
   (define res (ev str)) 
   (define out (get-output ev))
   (define err (get-error-output ev))  
-  (cond [(ev `(convertible? ,res))
+  (cond [(convertible? res)
+         (define res-convert (ev `(convert ,res 'png-bytes)))
          ;; run 'convert' in the sandbox for safety reasons
-         (run-code ev `(bytes-append #"data:image/png;base64,"
-                         (base64-encode (convert ,res 'png-bytes) #"")))]
+         (list (~v (bytes-append #"data:image/png;base64,"
+                                 (base64-encode res-convert #"")))
+               #f #f)]
         [else      (list (if (void? res) "" (format "~v" res))
                          (and (not (equal? out "")) out)
                          (and (not (equal? err "")) err))]))

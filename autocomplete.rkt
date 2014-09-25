@@ -1,14 +1,7 @@
-(module autocomplete racket
+#lang racket/base
 
-  (require readline/pread
-           pict
-           pict/code
-           (planet schematics/random:1:0/random)
-           file/convertible
-           net/base64)
-  
-  (provide namespace-completion)
- 
+(provide namespace-completion)
+
 ;;------------------------------------------------------------------
 ;; Auto-completion
 ;;------------------------------------------------------------------
@@ -38,7 +31,6 @@
          [pat (regexp-replace* #px#"(\\w)\\b" pat #"\\1\\\\w*")]
          [pat (byte-pregexp (bytes-append #"^" pat))])
     (map bytes->string/utf-8 (filter (lambda (bstr) 
-               (regexp-match pat bstr))
-            (get-namespace-bstrings)))))
+                                       (regexp-match pat bstr))
+                                     (get-namespace-bstrings)))))
 
-)

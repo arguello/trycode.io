@@ -1,4 +1,4 @@
-#lang racket
+#lang racket/base
 (require  web-server/servlet
           web-server/servlet-env
           web-server/templates
@@ -7,6 +7,9 @@
           racket/sandbox
           json
           racket/format
+          racket/dict
+          racket/match
+          racket/local
           racket/runtime-path
           web-server/managers/lru
           web-server/managers/manager
@@ -58,7 +61,7 @@
   (define out (get-output ev))
   (define err (get-error-output ev))  
   (cond [(convertible? res)
-         (define res-convert (ev `(convert ,res 'png-bytes)))
+         (define res-convert (ev `(convert ',res 'png-bytes)))
          ;; run 'convert' in the sandbox for safety reasons
          (list (~v (bytes-append #"data:image/png;base64,"
                                  (base64-encode res-convert #"")))
@@ -153,7 +156,7 @@
 
 ;; string string -> jsexpr
 (define (json-error expr msg)
-  (hasheq 'expr expr 'error true 'message msg))
+  (hasheq 'expr expr 'error #true 'message msg))
 
 ;; string string -> jsexpr
 (define (json-result expr res)

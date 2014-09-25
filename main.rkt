@@ -5,7 +5,7 @@
           web-server/dispatch
           web-server/http
           racket/sandbox
-          (planet dherman/json:4:=0)
+          json
           racket/runtime-path
           web-server/managers/lru
           web-server/managers/manager
@@ -43,7 +43,7 @@
                                    pict/code
                                    ,autocomplete
                                    (planet schematics/random:1:0/random)
-                                   (planet dherman/json:4:=0)
+                                   json
                                    file/convertible
                                    net/base64))))))
 
@@ -61,7 +61,7 @@
                          (and (not (equal? err "")) err))]))
 
 (define (complete-code ev str)
-  (define res (ev  `(jsexpr->json (namespace-completion ,str)))) 
+  (define res (ev  `(jsexpr->string (namespace-completion ,str)))) 
   (define out (get-output ev))
   (define err (get-error-output ev))  
   (list (if (void? res) "" res)
@@ -146,11 +146,11 @@
 
 ;; string string -> jsexpr
 (define (json-error expr msg)
-  (hasheq "expr" expr "error" true "message" msg))
+  (hasheq 'expr expr 'error true 'message msg))
 
 ;; string string -> jsexpr
 (define (json-result expr res)
-  (hasheq "expr" expr "result" res))
+  (hasheq 'expr expr 'result res))
 
 ;; string eval-result -> jsexpr
 (define (result-json expr lst)
@@ -163,24 +163,24 @@
       (json-error expr err))))
 
 
-;(module+ test
-;  (define ev (make-ev))
-;  (define (eval-result-to-json expr)
-;    (jsexpr->json 
-;    (hash-ref (result-json "" (run-code ev expr)) "result")))
-;  (define (eval-error-to-json expr)
-;    (jsexpr->json 
-;    (hash-ref (result-json "" (run-code ev expr)) "message")))
-;    
-;  (check-equal? 
-;   (eval-result-to-json "(+ 3 3)") "\"6\"")
-;  (check-equal? 
-;   (eval-result-to-json "(display \"6\")") "\"6\"")
-;  (check-equal? 
-;   (eval-result-to-json "(write \"6\")") "\"\\\"6\\\"\"")
-;  (check-equal? 
-;   (eval-result-to-json "(begin (display \"6 + \") \"6\")") "\"6 + \\\"6\\\"\"")
-;)  
+(module+ test
+ (define ev (make-ev))
+ (define (eval-result-to-json expr)
+   (jsexpr->string
+   (hash-ref (result-json "" (run-code ev expr)) 'result)))
+ (define (eval-error-to-json expr)
+   (jsexpr->string
+   (hash-ref (result-json "" (run-code ev expr)) 'message)))
+   
+ (check-equal? 
+  (eval-result-to-json "(+ 3 3)") "\"6\"")
+ (check-equal? 
+  (eval-result-to-json "(display \"6\")") "\"6\"")
+ (check-equal? 
+  (eval-result-to-json "(write \"6\")") "\"\\\"6\\\"\"")
+ (check-equal? 
+  (eval-result-to-json "(begin (display \"6 + \") \"6\")") "\"6 + \\\"6\\\"\"")
+)  
 
 ;; Eval handler
 (define (eval-with ev request) 
@@ -189,12 +189,12 @@
          (let ([expr (extract-binding/single 'expr bindings)])
            (make-response 
             #:mime-type APPLICATION/JSON-MIME-TYPE
-            (jsexpr->json (result-json expr (run-code ev expr)))))]
+            (jsexpr->string (result-json expr (run-code ev expr)))))]
          [(exists-binding? 'complete bindings)
           (let ([str (extract-binding/single 'complete bindings)])
             (make-response 
              #:mime-type APPLICATION/JSON-MIME-TYPE
-             (jsexpr->json 
+             (jsexpr->string 
               (result-json "" (complete-code ev str)))))]
         [else (make-response #:code 400 #:message #"Bad Request" "")]))
       
@@ -211,7 +211,7 @@
   (if (ajax? req)
       (make-response 
        #:mime-type APPLICATION/JSON-MIME-TYPE
-       (jsexpr->json 
+       (jsexpr->string 
         (json-error "" "Sorry, your session has expired. Please reload the page.")))
       (response/xexpr
       `(html (head (title "Page Has Expired."))
@@ -231,19 +231,20 @@
 ;   #:initial-count 15
 ;   #:inform-p (lambda args (void))))
 
-(serve/servlet
- dispatch
- #:stateless? #f       
- #:launch-browser? #f
- #:connection-close? #t
- #:quit? #f 
- #:listen-ip #f 
- #:port 8080
- #:servlet-regexp #rx""
- #:extra-files-paths (list static)
- #:servlet-path "/"
- #:manager mgr
- #:log-file "try-racket-serve-log.txt")
+(module+ main
+  (serve/servlet
+   dispatch
+   #:stateless? #f       
+   #:launch-browser? #t
+   #:connection-close? #t
+   #:quit? #f 
+   #:listen-ip #f 
+   #:port 8080
+   #:servlet-regexp #rx""
+   #:extra-files-paths (list static)
+   #:servlet-path "/"
+   #:manager mgr
+   #:log-file "try-racket-serve-log.txt"))
 
 
 

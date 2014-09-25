@@ -245,7 +245,7 @@
   (serve/servlet
    dispatch
    #:stateless? #f       
-   #:launch-browser? #t
+   #:launch-browser? #f
    #:connection-close? #t
    #:quit? #f 
    #:listen-ip #f 

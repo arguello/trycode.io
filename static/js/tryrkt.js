@@ -161,31 +161,32 @@ function onHandle(line, report) {
     var input = $.trim(line);
     // handle commands
     if (doCommand(input)) {
-			report();
-			return;
-		}
-    // perform evaluation
-    var data = eval_racket(input);
+	report();
+	return;
+    }
+    // perform evaluation. Result is a list to handle (values ...)
+    var datas = eval_racket(input);
+    var results = [];
 
-    // handle error
-    if (data.error) {
-        return [{msg: data.message, className: "jquery-console-message-error"}];
+    for (var i = 0; i < datas.length; i++) {
+	var data = datas[i];
+	// handle error
+	if (data.error) {
+            results.push({msg: data.message, className: "jquery-console-message-error"});
+	} // handle page
+	else if (currentPage >= 0 && pageExitConditions[currentPage].verify(data)) {
+  	    goToPage(currentPage + 1);
+	}
+	// display expr results
+	if(/#\"data:image\/png;base64,/.test(data.result)){
+            $('.jquery-console-inner').append('<img src="' + data.result.substring(2) + " /><br />");
+            controller.scrollToBottom();
+            results.push({msg: "", className: "jquery-console-message-value"});
+	} else {
+	    results.push({msg: data.result, className: "jquery-console-message-value"});
+	}
     }
-    
-    // handle page
-    if (currentPage >= 0 && pageExitConditions[currentPage].verify(data)) {
-  			goToPage(currentPage + 1);
-    }
-    
-    
-    // display expr results
-    if(/#\"data:image\/png;base64,/.test(data.result)){
-        $('.jquery-console-inner').append('<img src="' + data.result.substring(2) + " />");
-        controller.scrollToBottom();
-        return [{msg: "", className: "jquery-console-message-value"}];
-    }
-    else
-        return [{msg: data.result, className: "jquery-console-message-value"}];
+    return results;
 }
 
 /**

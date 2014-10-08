@@ -57,26 +57,28 @@
 
 
 (define (run-code ev str)
-  (define res (ev str)) 
+  (define reses ; Gather results into a list
+    (call-with-values (λ () (ev str)) (λ xs xs))) 
   (define out (get-output ev))
-  (define err (get-error-output ev))  
-  (cond [(convertible? res)
-         (define res-convert (ev `(convert ',res 'png-bytes)))
-         ;; run 'convert' in the sandbox for safety reasons
-         (list (~v (bytes-append #"data:image/png;base64,"
-                                 (base64-encode res-convert #"")))
-               #f #f)]
-        [else      (list (if (void? res) "" (format "~v" res))
-                         (and (not (equal? out "")) out)
-                         (and (not (equal? err "")) err))]))
+  (define err (get-error-output ev))
+  (for/list ([res reses])
+    (cond [(convertible? res)
+           (define res-convert (ev `(convert ',res 'png-bytes)))
+           ;; run 'convert' in the sandbox for safety reasons
+           (list (~v (bytes-append #"data:image/png;base64,"
+                                   (base64-encode res-convert #"")))
+                 #f #f)]
+          [else      (list (if (void? res) "" (format "~v" res))
+                           (and (not (equal? out "")) out)
+                           (and (not (equal? err "")) err))])))
 
 (define (complete-code ev str)
   (define res (ev  `(jsexpr->string (namespace-completion ,str)))) 
   (define out (get-output ev))
   (define err (get-error-output ev))  
-  (list (if (void? res) "" res)
-        (and (not (equal? out "")) out)
-        (and (not (equal? err "")) err)))
+  (list (list (if (void? res) "" res)
+              (and (not (equal? out "")) out)
+              (and (not (equal? err "")) err))))
 
 ;;------------------------------------------------------------------
 ;; Routes
@@ -162,15 +164,16 @@
 (define (json-result expr res)
   (hasheq 'expr expr 'result res))
 
-;; string eval-result -> jsexpr
-(define (result-json expr lst)
-   (match lst
-     ((list res #f #f) 
-      (json-result expr res))
-     ((list res out #f) 
-      (json-result expr (string-append out res)))
-     ((list _ _ err)
-      (json-error expr err))))
+;; string (listof eval-result) -> (listof jsexpr)
+(define (result-json expr lsts)
+  (for/list ([lst lsts])
+    (match lst
+      [(list res #f #f) 
+       (json-result expr res)]
+      [(list res out #f) 
+       (json-result expr (string-append out res))]
+      [(list _ _ err)
+       (json-error expr err)])))
 
 
 (module+ test
@@ -205,7 +208,7 @@
             (make-response 
              #:mime-type APPLICATION/JSON-MIME-TYPE
              (jsexpr->string 
-              (result-json "" (complete-code ev str)))))]
+              (car (result-json "" (complete-code ev str))))))]
         [else (make-response #:code 400 #:message #"Bad Request" "")]))
       
 

@@ -176,24 +176,27 @@
        (json-error expr err)])))
 
 
-;(module+ test
-; (define ev (make-ev))
-; (define (eval-result-to-json expr)
-;   (jsexpr->string
-;   (hash-ref (result-json "" (run-code ev expr)) 'result)))
-; (define (eval-error-to-json expr)
-;   (jsexpr->string
-;   (hash-ref (result-json "" (run-code ev expr)) 'message)))
-;   
-; (check-equal? 
-;  (eval-result-to-json "(+ 3 3)") "\"6\"")
-; (check-equal? 
-;  (eval-result-to-json "(display \"6\")") "\"6\"")
-; (check-equal? 
-;  (eval-result-to-json "(write \"6\")") "\"\\\"6\\\"\"")
-; (check-equal? 
-;  (eval-result-to-json "(begin (display \"6 + \") \"6\")") "\"6 + \\\"6\\\"\"")
-;)  
+(module+ test
+ (define ev (make-ev))
+ ;; String -> (Listof String)
+ ;; e.g. (values (+ 1 2) 4) ~> '("3" "4"), (modulo quotes)
+ (define (eval-result-to-json expr)
+   (for/list ([res (result-json "" (run-code ev expr))])
+     (jsexpr->string (hash-ref res 'result))))
+ ;; String -> String
+ (define (eval-error-to-json expr)
+   (match-define (list res) (result-json "" (run-code ev expr)))
+   (jsexpr->string (hash-ref res 'message)))
+   
+ (check-equal? 
+  (eval-result-to-json "(+ 3 3)") (list "\"6\""))
+ (check-equal? 
+  (eval-result-to-json "(display \"6\")") (list "\"6\""))
+ (check-equal? 
+  (eval-result-to-json "(write \"6\")") (list "\"\\\"6\\\"\""))
+ (check-equal? 
+  (eval-result-to-json "(begin (display \"6 + \") \"6\")") (list "\"6 + \\\"6\\\"\""))
+)  
 
 ;; Eval handler
 (define (eval-with ev request) 

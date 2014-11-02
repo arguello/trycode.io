@@ -15,6 +15,7 @@
           web-server/managers/manager
           file/convertible
           net/base64
+          setup/dirs
 ;          racket/gui/base ; ensures that `make-ev` does not try to instantiate it multiple times
           "autocomplete.rkt"
           )
@@ -23,6 +24,8 @@
 
 (module+ test (require rackunit))
 
+;; Force a check for the DLL dirs; work around for Windows and Mac compatibility
+(find-dll-dir)
 
 ;; Paths
 (define autocomplete 
@@ -43,7 +46,8 @@
                  [sandbox-namespace-specs
                   (append (sandbox-namespace-specs)
                           `(file/convertible
-                            json))]
+                            json
+                            setup/dirs))]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
     ((lambda () 
        (make-evaluator 'racket/base

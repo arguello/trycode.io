@@ -14,6 +14,8 @@ Slight additional modifications have since been made to remove dependencies on X
     $ racket main.rkt
     
 	Open http://localhost:8080 in your browser
+	
+*NOTE:* Currently try-racket does not work properly on Windows/Mac platforms. It should run, but hosting is not recommended as surprising behaviors continue to be discovered. 
 
 ## Online host
 

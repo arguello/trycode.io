@@ -1,0 +1,217 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata></metadata>
+<defs>
+<font id="spacemanregular" horiz-adv-x="1308" >
+<font-face units-per-em="2048" ascent="1638" descent="-410" />
+<missing-glyph horiz-adv-x="1368" />
+<glyph horiz-adv-x="0" />
+<glyph unicode="&#xd;" horiz-adv-x="2048" />
+<glyph unicode=" "  horiz-adv-x="1368" />
+<glyph unicode="&#x09;" horiz-adv-x="1368" />
+<glyph unicode="&#xa0;" horiz-adv-x="1368" />
+<glyph unicode="!" horiz-adv-x="700" d="M0 0v272h393v-272h-393zM0 399v1194h393v-1194h-393z" />
+<glyph unicode="&#x22;" horiz-adv-x="966" />
+<glyph unicode="#" horiz-adv-x="1103" />
+<glyph unicode="$" horiz-adv-x="1302" />
+<glyph unicode="%" horiz-adv-x="1095" />
+<glyph unicode="&#x26;" horiz-adv-x="1857" />
+<glyph unicode="'" horiz-adv-x="499" d="M0 1593v275h330v-275l-90 -272h-150z" />
+<glyph unicode="(" horiz-adv-x="964" d="M0 -313v2220h627v-314h-314v-1593h314v-313h-627z" />
+<glyph unicode=")" horiz-adv-x="937" d="M0 0h313v1593h-313v314h627v-2220h-627v313z" />
+<glyph unicode="*" horiz-adv-x="782" />
+<glyph unicode="+" horiz-adv-x="1978" d="M0 631v330l662 2v329h329v-329l735 -2v-330l-735 2v-332h-329v332z" />
+<glyph unicode="," horiz-adv-x="876" d="M0 0v272h539v-272q0 -100 -90 -180q-37 -33 -76 -47v227h-373z" />
+<glyph unicode="-" horiz-adv-x="1611" d="M0 633v330l1356 -2v-330z" />
+<glyph unicode="." horiz-adv-x="679" d="M0 0v272h330v-272h-330z" />
+<glyph unicode="/" horiz-adv-x="1828" d="M0 0l1419 1593h377l-1395 -1593h-401z" />
+<glyph unicode="0" horiz-adv-x="2260" d="M14 422v332q0 176 125 300t299 124h1098q176 0 300 -124t124 -300v-332q0 -174 -124 -299t-300 -125h-1098q-174 0 -299 125t-125 299zM367 455q0 -72 51 -123t123 -51h876q72 0 123 51t51 123v282q0 72 -51 123t-123 51h-876q-72 0 -123 -51t-51 -123v-282zM854 471v254 h287v-254h-287z" />
+<glyph unicode="1" horiz-adv-x="2131" d="M0 870h1190q94 0 156 -53q29 -25 73 -115l2 -4h-2v-256h2l-2 -6v-436h363v569q0 268 -137 418q-143 152 -410 152h-1235v-269z" />
+<glyph unicode="2" horiz-adv-x="2127" d="M0 0h1870v268l-1442 -2q-115 0 -115 88q0 86 115 86l1083 2q160 0 259.5 93.5t99.5 252.5q0 213 -166 306q-80 45 -193 45l-1448 4v-269l1381 -4q113 0 112 -86q0 -86 -112 -86l-1086 -2q-160 0 -259 -94t-99 -254v-348z" />
+<glyph unicode="3" horiz-adv-x="2093" d="M0 0h1235q266 0 410 152q137 150 137 417q0 268 -137 418q-143 152 -410 152h-1235v-269h1190q94 0 156 -53q29 -25 73 -115l2 -4h-1163v-256h1163l-2 -6q-35 -82 -73 -114q-62 -54 -156 -54h-1190v-268z" />
+<glyph unicode="4" horiz-adv-x="2480" d="M0 1026q0 -371 254 -504q125 -66 293 -65l1249 2v-455h342v1139h-342v-400l-1204 -2q-119 0 -180 86q-53 76 -54 199q0 72 15 117h-365q-8 -49 -8 -117z" />
+<glyph unicode="5" horiz-adv-x="2127" d="M0 0v268l1444 4q113 0 112 86q0 88 -112 88h-1086q-160 0 -259 95.5t-99 253.5v348h1794v-269l-1485 3q2 -45 2 -76q0 -98 117 -99h1083q160 0 259.5 -94t99.5 -254q0 -213 -166 -305q-80 -45 -193 -45z" />
+<glyph unicode="6" horiz-adv-x="2244" d="M0 0h1526q170 0 265 91t95 259t-96 258t-264 90h-1184v11q0 49 24.5 95t69.5 58q29 8 88 8h1284v269h-1366q-205 0 -323.5 -106.5t-118.5 -338.5v-694zM342 268v174h1096q106 0 106 -88q0 -86 -106 -86h-1096z" />
+<glyph unicode="7" horiz-adv-x="2131" d="M0 870h1190q94 0 156 -53q29 -25 73 -115l2 -4h-2l-590 4v-268l590 2v-436h363v569q0 268 -137 418q-143 152 -410 152h-1235v-269z" />
+<glyph unicode="8" horiz-adv-x="2260" d="M14 422v332q0 176 125 300t299 124h1098q176 0 300 -124t124 -300v-332q0 -174 -124 -299t-300 -125h-1098q-174 0 -299 125t-125 299zM362 471v254h1229v-254h-1229zM367 455q0 -72 51 -123t123 -51h876q72 0 123 51t51 123v282q0 72 -51 123t-123 51h-876 q-72 0 -123 -51t-51 -123v-282z" />
+<glyph unicode="9" horiz-adv-x="2244" d="M0 788q0 -164 97.5 -255t262.5 -91h1184v-12q0 -74 -39 -115q-41 -47 -143 -47h-1282v-268h1366q203 0 321 106q74 66 101 154q18 66 18 184v695h-1526q-168 0 -264 -92.5t-96 -258.5zM342 784q0 88 109 88h1093v-174h-1093q-109 0 -109 86z" />
+<glyph unicode=":" horiz-adv-x="618" d="M0 0v272h330v-272h-330zM0 655v272h330v-272h-330z" />
+<glyph unicode=";" horiz-adv-x="876" d="M0 0v272h539v-272q0 -100 -90 -180q-37 -33 -76 -47v227h-373zM0 647v281h539v-281h-539z" />
+<glyph unicode="&#x3c;" horiz-adv-x="540" />
+<glyph unicode="=" horiz-adv-x="1650" d="M0 473v248l1300 4v-252h-1300zM0 874v246h1300v-248z" />
+<glyph unicode="&#x3e;" horiz-adv-x="475" />
+<glyph unicode="?" horiz-adv-x="2494" d="M0 1253v340l1673 2q221 0 346 -135q119 -129 119 -348q0 -262 -153 -381q-127 -98 -312 -98h-645q-80 0 -131 -43t-51 -121v-84h-393v84q0 225 131 359.5t354 134.5h698q164 0 164 145t-164 145h-1636zM453 0v272h393v-272h-393z" />
+<glyph unicode="@" horiz-adv-x="2170" d="M0 797q0 365 242 536q109 78 223 109q51 14 280 24q178 8 275 9q606 0 684 -27q98 -33 162 -121q53 -74 53 -188v-647h-1186q-217 0 -299 153q-37 70 -37 150q0 195 152 272q84 43 233 43h910v29q0 121 -125 155q-59 16 -254 21q-299 6 -561 -8q-252 -14 -314 -37 q-141 -53 -215 -189q-63 -121 -63 -284q0 -254 139 -383t395 -129h989v-158h-989q-469 0 -622 326q-72 154 -72 344zM625 795q0 -84 47 -117q37 -27 127 -27h893v299h-899q-168 0 -168 -155z" />
+<glyph unicode="A" horiz-adv-x="2244" d="M0 350q0 166 97.5 257t262.5 91h1184v11q0 127 -94 153q-29 8 -88 8h-1282v269h1366q203 0 321 -107q74 -66 101 -153q18 -66 18 -185v-694h-1526q-168 0 -264 92t-96 258zM342 354q0 -86 109 -86h1093v174h-1093q-109 0 -109 -88z" />
+<glyph unicode="B" horiz-adv-x="2246" d="M0 0v1593h342v-454h1096q348 0 481 -258q66 -127 66 -312q0 -371 -254 -503q-125 -66 -293 -66h-1438zM342 285h1051q119 0 180 86q53 74 53 198q0 125 -53 199q-61 86 -180 86h-1051v-569z" />
+<glyph unicode="C" horiz-adv-x="2093" d="M0 569q0 268 140.5 419t406.5 151h1218v-285h-1173q-119 0 -180 -86q-53 -74 -54 -199q0 -125 54 -198q61 -86 180 -86h1173v-285h-1218q-266 0 -406.5 150.5t-140.5 418.5z" />
+<glyph unicode="D" horiz-adv-x="2314" d="M0 569q0 371 254 504q125 66 293 66h1067v454h342v-1593h-1409q-350 0 -481 258q-66 129 -66 311zM358 569q0 -125 54 -198q61 -86 180 -86h1022v569h-1022q-119 0 -180 -86q-53 -74 -54 -199z" />
+<glyph unicode="E" horiz-adv-x="2093" d="M0 569q0 268 140.5 419t406.5 151h1235v-269h-1190q-94 0 -156 -53q-29 -25 -74 -115l-2 -4h1422v-256h-1422l2 -6q41 -88 74 -114q62 -54 156 -54h1190v-268h-1235q-266 0 -406.5 150.5t-140.5 418.5z" />
+<glyph unicode="F" horiz-adv-x="1855" d="M0 430v268h215v113q0 90 16.5 150.5t67.5 111.5t110.5 65.5t147.5 14.5l1026 -2v-266h-866q-39 0 -68 -4q-20 -6 -47 -25q-45 -41 -45 -129v-29l1026 4v-268l-1026 -4v-870h-342v870h-215z" />
+<glyph unicode="G" horiz-adv-x="2465" d="M0 569q0 268 140.5 419t406.5 151l1577 -2v-1170q0 -201 -117 -313.5t-299 -112.5l-1583 4v267l1522 -2q80 0 110 47q25 37 25 120v23h-1235q-266 0 -406.5 150.5t-140.5 418.5zM358 569q0 -125 54 -198q59 -86 180 -86l1190 4v563l-1190 2q-119 0 -180 -86 q-53 -74 -54 -199z" />
+<glyph unicode="H" horiz-adv-x="2172" d="M0 0v1593h342v-454h1100q205 0 309 -111q96 -102 96 -237v-791h-342v735q0 57 -34.5 88t-84.5 31h-1044v-854h-342z" />
+<glyph unicode="I" horiz-adv-x="684" d="M0 0v1139h342v-1139h-342zM0 1253v273h342v-273h-342z" />
+<glyph unicode="J" horiz-adv-x="1875" d="M0 -170h1044q135 0 136 150v1159h342v-1221q0 -117 -77 -213t-192 -131q-92 -29 -184 -29h-1069v285zM1180 1253v273h342v-273h-342z" />
+<glyph unicode="K" horiz-adv-x="2447" d="M0 4h342v399h1204q119 0 178 -86q53 -74 54 -198q0 -66 -13 -115h365q8 49 8 115q0 367 -254 504q-121 65 -288 65h-5l-1249 -2v905h-342v-1587zM1212 686h359v299q0 -119 -115 -209t-244 -90zM1571 985h299v158h-299v-158zM1573 688v297h299q0 -297 -299 -297z" />
+<glyph unicode="L" horiz-adv-x="2039" d="M2 578v565h373v-531q0 -133 82 -209q66 -61 188 -61h1071v-342h-1165q-393 0 -506 319q-43 123 -43 259z" />
+<glyph unicode="M" horiz-adv-x="2686" d="M0 0v1139h1968q205 0 309 -111q94 -100 95 -237v-791h-342v735q0 119 -119 119h-559v-854h-342v854h-668v-854h-342z" />
+<glyph unicode="N" horiz-adv-x="2164" d="M0 0v1139h1409q205 0 309 -111q96 -102 97 -237v-791h-342v735q0 119 -119 119h-1012v-854h-342z" />
+<glyph unicode="O" horiz-adv-x="2260" d="M14 422v332q0 176 125 300t299 124h1098q176 0 300 -124t124 -300v-332q0 -174 -124 -299t-300 -125h-1098q-174 0 -299 125t-125 299zM367 455q0 -72 51 -123t123 -51h876q72 0 123 51t51 123v282q0 72 -51 123t-123 51h-876q-72 0 -123 -51t-51 -123v-282z" />
+<glyph unicode="P" horiz-adv-x="2336" d="M0 -455v1594h1473q350 0 481 -258q65 -127 65 -307v-5q0 -371 -254 -503q-125 -66 -292 -66h-1131v-455h-342zM342 285h1085q119 0 181 86q53 74 53 198q0 125 -53 199q-61 86 -181 86h-1085v-569z" />
+<glyph unicode="Q" horiz-adv-x="2480" d="M0 569q0 371 254 504q125 66 293 66l1591 -4v-1590h-342v457l-1249 -2q-350 0 -481 258q-66 129 -66 311zM358 569q0 -125 54 -198q61 -86 180 -86l1204 2v563l-1204 4q-121 0 -180 -86q-53 -74 -54 -199z" />
+<glyph unicode="R" horiz-adv-x="1945" d="M0 0v1139l1249 4q201 0 307 -113q96 -102 97 -235v-119h-342v61q0 57 -37 90q-27 25 -82 25l-850 2v-854h-342z" />
+<glyph unicode="S" horiz-adv-x="2127" d="M0 0v268l1444 -2q112 0 112 86q0 88 -112 88l-1086 2q-160 0 -259 93.5t-99 252.5q0 211 166 306q80 45 192 45h1450v-269h-1382q-113 0 -113 -86t113 -86l1085 -2q160 0 259.5 -94t99.5 -254q0 -215 -166 -305q-78 -43 -193 -43h-1511z" />
+<glyph unicode="T" horiz-adv-x="1878" d="M0 870v269h205v454h342v-454h1030v-269h-1030v-444q0 -94 43 -129q35 -29 117 -29h870v-268h-1032q-180 0 -260 82q-51 53 -68 121q-12 45 -12 139v528h-205z" />
+<glyph unicode="U" horiz-adv-x="2172" d="M0 348v791h342v-733q0 -121 119 -121h1036v854h342v-1139h-1433q-209 0 -307.5 108.5t-98.5 239.5z" />
+<glyph unicode="V" horiz-adv-x="2172" d="M0 0v1139h342v-854h1155v854h342v-1139h-1839z" />
+<glyph unicode="W" horiz-adv-x="2709" d="M0 348v791h342v-733q0 -121 119 -121h559v854h342v-854h668v854h342v-1139h-1969q-203 0 -307 111q-96 102 -96 237z" />
+<glyph unicode="X" horiz-adv-x="2082" d="M0 0v283h270v-283h-270zM0 811h270v324h-270v-324zM2 283q0 111 79 189.5t189 78.5v-268h-268zM2 811q0 -113 79 -190.5t189 -77.5v268h-268zM270 426h1323v268h-1323v-268zM272 193q0 98 69 166.5t167 68.5h-236v-235zM272 694v236q0 -98 69 -167t167 -69h-236z M1356 694h235v236q0 -98 -68.5 -167t-166.5 -69zM1358 426h235v-236q0 98 -69.5 167t-165.5 69zM1593 0h271v283h-271v-283zM1593 283h269q0 111 -79 189.5t-190 78.5v-268zM1593 543v268h269q0 -113 -79 -190.5t-190 -77.5zM1593 811v324h271v-324h-271z" />
+<glyph unicode="Y" horiz-adv-x="2394" d="M0 348v791h342v-688q0 -76 45 -121t121 -45h1171v854h342v-1180q0 -199 -118.5 -311.5t-298.5 -112.5h-1575v277h1515q72 0 105 43q30 30 30 119v6v20h-1273q-209 0 -307.5 108.5t-98.5 239.5z" />
+<glyph unicode="Z" horiz-adv-x="2127" d="M0 348q0 -213 168 -305q78 -43 190 -43h1512v268l-1442 -2q-115 0 -115 88q0 86 115 86l1083 2q160 0 259.5 93.5t99.5 252.5q0 213 -166 306q-80 45 -193 45l-1448 4v-269l1381 -4q112 0 112 -84q0 -88 -112 -88l-1086 -2q-160 0 -259 -94t-99 -254z" />
+<glyph unicode="[" horiz-adv-x="739" d="M0 -313v2220h627v-314h-314v-1593h314v-313h-627z" />
+<glyph unicode="\" horiz-adv-x="1929" d="M0 1593l1395 -1593h401l-1417 1593h-379z" />
+<glyph unicode="]" horiz-adv-x="749" />
+<glyph unicode="^" horiz-adv-x="831" />
+<glyph unicode="_" horiz-adv-x="2400" d="M0 -125h2050v-330h-2050v330z" />
+<glyph unicode="`" horiz-adv-x="534" d="M0 1651h193l229 -228h-195z" />
+<glyph unicode="a" horiz-adv-x="2244" d="M0 350q0 166 97.5 257t262.5 91h1184v11q0 127 -94 153q-29 8 -88 8h-1282v269h1366q203 0 321 -107q74 -66 101 -153q18 -66 18 -185v-694h-1526q-168 0 -264 92t-96 258zM342 354q0 -86 109 -86h1093v174h-1093q-109 0 -109 -88z" />
+<glyph unicode="b" horiz-adv-x="2246" d="M0 0v1593h342v-454h1096q348 0 481 -258q66 -127 66 -312q0 -371 -254 -503q-125 -66 -293 -66h-1438zM342 285h1051q119 0 180 86q53 74 53 198q0 125 -53 199q-61 86 -180 86h-1051v-569z" />
+<glyph unicode="c" horiz-adv-x="2093" d="M0 569q0 268 140.5 419t406.5 151h1218v-285h-1173q-119 0 -180 -86q-53 -74 -54 -199q0 -125 54 -198q61 -86 180 -86h1173v-285h-1218q-266 0 -406.5 150.5t-140.5 418.5z" />
+<glyph unicode="d" horiz-adv-x="2314" d="M0 569q0 371 254 504q125 66 293 66h1067v454h342v-1593h-1409q-350 0 -481 258q-66 129 -66 311zM358 569q0 -125 54 -198q61 -86 180 -86h1022v569h-1022q-119 0 -180 -86q-53 -74 -54 -199z" />
+<glyph unicode="e" horiz-adv-x="2093" d="M0 569q0 268 140.5 419t406.5 151h1235v-269h-1190q-94 0 -156 -53q-29 -25 -74 -115l-2 -4h1422v-256h-1422l2 -6q41 -88 74 -114q62 -54 156 -54h1190v-268h-1235q-266 0 -406.5 150.5t-140.5 418.5z" />
+<glyph unicode="f" horiz-adv-x="1855" d="M0 430v268h215v113q0 90 16.5 150.5t67.5 111.5t110.5 65.5t147.5 14.5l1026 -2v-266h-866q-39 0 -68 -4q-20 -6 -47 -25q-45 -41 -45 -129v-29l1026 4v-268l-1026 -4v-870h-342v870h-215z" />
+<glyph unicode="g" horiz-adv-x="2465" d="M0 569q0 268 140.5 419t406.5 151l1577 -2v-1170q0 -201 -117 -313.5t-299 -112.5l-1583 4v267l1522 -2q80 0 110 47q25 37 25 120v23h-1235q-266 0 -406.5 150.5t-140.5 418.5zM358 569q0 -125 54 -198q59 -86 180 -86l1190 4v563l-1190 2q-119 0 -180 -86 q-53 -74 -54 -199z" />
+<glyph unicode="h" horiz-adv-x="2172" d="M0 0v1593h342v-454h1100q205 0 309 -111q96 -102 96 -237v-791h-342v735q0 57 -34.5 88t-84.5 31h-1044v-854h-342z" />
+<glyph unicode="i" horiz-adv-x="684" d="M0 0v1139h342v-1139h-342zM0 1253v273h342v-273h-342z" />
+<glyph unicode="j" horiz-adv-x="1875" d="M0 -170h1044q135 0 136 150v1159h342v-1221q0 -117 -77 -213t-192 -131q-92 -29 -184 -29h-1069v285zM1180 1253v273h342v-273h-342z" />
+<glyph unicode="k" horiz-adv-x="2447" d="M0 4h342v399h1204q119 0 178 -86q53 -74 54 -198q0 -66 -13 -115h365q8 49 8 115q0 367 -254 504q-121 65 -288 65h-5l-1249 -2v905h-342v-1587zM1212 686h359v299q0 -119 -115 -209t-244 -90zM1571 985h299v158h-299v-158zM1573 688v297h299q0 -297 -299 -297z" />
+<glyph unicode="l" horiz-adv-x="2039" d="M2 578v565h373v-531q0 -133 82 -209q66 -61 188 -61h1071v-342h-1165q-393 0 -506 319q-43 123 -43 259z" />
+<glyph unicode="m" horiz-adv-x="2686" d="M0 0v1139h1968q205 0 309 -111q94 -100 95 -237v-791h-342v735q0 119 -119 119h-559v-854h-342v854h-668v-854h-342z" />
+<glyph unicode="n" horiz-adv-x="2164" d="M0 0v1139h1409q205 0 309 -111q96 -102 97 -237v-791h-342v735q0 119 -119 119h-1012v-854h-342z" />
+<glyph unicode="o" horiz-adv-x="2260" d="M14 422v332q0 176 125 300t299 124h1098q176 0 300 -124t124 -300v-332q0 -174 -124 -299t-300 -125h-1098q-174 0 -299 125t-125 299zM367 455q0 -72 51 -123t123 -51h876q72 0 123 51t51 123v282q0 72 -51 123t-123 51h-876q-72 0 -123 -51t-51 -123v-282z" />
+<glyph unicode="p" horiz-adv-x="2336" d="M0 -455v1594h1473q350 0 481 -258q65 -127 65 -307v-5q0 -371 -254 -503q-125 -66 -292 -66h-1131v-455h-342zM342 285h1085q119 0 181 86q53 74 53 198q0 125 -53 199q-61 86 -181 86h-1085v-569z" />
+<glyph unicode="q" horiz-adv-x="2480" d="M0 569q0 371 254 504q125 66 293 66l1591 -4v-1590h-342v457l-1249 -2q-350 0 -481 258q-66 129 -66 311zM358 569q0 -125 54 -198q61 -86 180 -86l1204 2v563l-1204 4q-121 0 -180 -86q-53 -74 -54 -199z" />
+<glyph unicode="r" horiz-adv-x="1945" d="M0 0v1139l1249 4q201 0 307 -113q96 -102 97 -235v-119h-342v61q0 57 -37 90q-27 25 -82 25l-850 2v-854h-342z" />
+<glyph unicode="s" horiz-adv-x="2127" d="M0 0v268l1444 -2q112 0 112 86q0 88 -112 88l-1086 2q-160 0 -259 93.5t-99 252.5q0 211 166 306q80 45 192 45h1450v-269h-1382q-113 0 -113 -86t113 -86l1085 -2q160 0 259.5 -94t99.5 -254q0 -215 -166 -305q-78 -43 -193 -43h-1511z" />
+<glyph unicode="t" horiz-adv-x="1878" d="M0 870v269h205v454h342v-454h1030v-269h-1030v-444q0 -94 43 -129q35 -29 117 -29h870v-268h-1032q-180 0 -260 82q-51 53 -68 121q-12 45 -12 139v528h-205z" />
+<glyph unicode="u" horiz-adv-x="2172" d="M0 348v791h342v-733q0 -121 119 -121h1036v854h342v-1139h-1433q-209 0 -307.5 108.5t-98.5 239.5z" />
+<glyph unicode="v" horiz-adv-x="2172" d="M0 0v1139h342v-854h1155v854h342v-1139h-1839z" />
+<glyph unicode="w" horiz-adv-x="2709" d="M0 348v791h342v-733q0 -121 119 -121h559v854h342v-854h668v854h342v-1139h-1969q-203 0 -307 111q-96 102 -96 237z" />
+<glyph unicode="x" horiz-adv-x="2082" d="M0 0v283h270v-283h-270zM0 811h270v324h-270v-324zM2 283q0 111 79 189.5t189 78.5v-268h-268zM2 811q0 -113 79 -190.5t189 -77.5v268h-268zM270 426h1323v268h-1323v-268zM272 193q0 98 69 166.5t167 68.5h-236v-235zM272 694v236q0 -98 69 -167t167 -69h-236z M1356 694h235v236q0 -98 -68.5 -167t-166.5 -69zM1358 426h235v-236q0 98 -69.5 167t-165.5 69zM1593 0h271v283h-271v-283zM1593 283h269q0 111 -79 189.5t-190 78.5v-268zM1593 543v268h269q0 -113 -79 -190.5t-190 -77.5zM1593 811v324h271v-324h-271z" />
+<glyph unicode="y" horiz-adv-x="2394" d="M0 348v791h342v-688q0 -76 45 -121t121 -45h1171v854h342v-1180q0 -199 -118.5 -311.5t-298.5 -112.5h-1575v277h1515q72 0 105 43q30 30 30 119v6v20h-1273q-209 0 -307.5 108.5t-98.5 239.5z" />
+<glyph unicode="z" horiz-adv-x="2127" d="M0 348q0 -213 168 -305q78 -43 190 -43h1512v268l-1442 -2q-115 0 -115 88q0 86 115 86l1083 2q160 0 259.5 93.5t99.5 252.5q0 213 -166 306q-80 45 -193 45l-1448 4v-269l1381 -4q112 0 112 -84q0 -88 -112 -88l-1086 -2q-160 0 -259 -94t-99 -254z" />
+<glyph unicode="{" horiz-adv-x="1054" d="M0 641v313h68q57 0 97 39t40 97v503q0 74 19.5 126.5t69.5 101.5t102 67.5t122 18.5h402v-314h-334q-68 0 -68 -67v-592q0 -55 -38 -96t-93 -41h-2q57 0 95 -39t38 -96v-594q0 -68 68 -68h334v-313h-402q-135 0 -224 87t-89 226v504q0 57 -40 97t-97 40h-68z" />
+<glyph unicode="|" horiz-adv-x="432" />
+<glyph unicode="}" horiz-adv-x="1054" d="M0 0v-313h401q100 0 180.5 51t110.5 143q23 68 23 119v504q0 57 40 97t97 40h68v313h-68q-57 0 -97 39t-40 97v503q0 148 -90 228q-80 86 -224 86h-401v-314h334q68 0 67 -67v-592q0 -55 38 -96t93 -41h3q-57 0 -95.5 -39t-38.5 -96v-594q0 -68 -67 -68h-334z" />
+<glyph unicode="~" horiz-adv-x="700" />
+<glyph unicode="&#xa1;" horiz-adv-x="563" />
+<glyph unicode="&#xa2;" horiz-adv-x="1183" />
+<glyph unicode="&#xa3;" />
+<glyph unicode="&#xa5;" horiz-adv-x="1593" />
+<glyph unicode="&#xa7;" horiz-adv-x="1030" />
+<glyph unicode="&#xa8;" horiz-adv-x="888" />
+<glyph unicode="&#xa9;" horiz-adv-x="1734" />
+<glyph unicode="&#xaa;" horiz-adv-x="681" />
+<glyph unicode="&#xab;" horiz-adv-x="944" />
+<glyph unicode="&#xad;" horiz-adv-x="1611" d="M0 633v330l1356 -2v-330z" />
+<glyph unicode="&#xae;" horiz-adv-x="1280" />
+<glyph unicode="&#xaf;" horiz-adv-x="512" />
+<glyph unicode="&#xb0;" horiz-adv-x="704" />
+<glyph unicode="&#xb4;" horiz-adv-x="468" d="M0 1423l229 228h193l-227 -228h-195z" />
+<glyph unicode="&#xb6;" horiz-adv-x="1646" />
+<glyph unicode="&#xb7;" horiz-adv-x="444" />
+<glyph unicode="&#xba;" horiz-adv-x="718" />
+<glyph unicode="&#xbb;" horiz-adv-x="952" />
+<glyph unicode="&#xbf;" horiz-adv-x="1644" />
+<glyph unicode="&#xc0;" horiz-adv-x="1761" />
+<glyph unicode="&#xc1;" horiz-adv-x="1761" />
+<glyph unicode="&#xc2;" horiz-adv-x="1761" />
+<glyph unicode="&#xc3;" horiz-adv-x="1761" />
+<glyph unicode="&#xc4;" horiz-adv-x="2082" />
+<glyph unicode="&#xc5;" horiz-adv-x="1761" />
+<glyph unicode="&#xc6;" horiz-adv-x="2390" />
+<glyph unicode="&#xc7;" horiz-adv-x="1492" />
+<glyph unicode="&#xc8;" horiz-adv-x="1449" />
+<glyph unicode="&#xc9;" horiz-adv-x="1449" />
+<glyph unicode="&#xca;" horiz-adv-x="1449" />
+<glyph unicode="&#xcb;" horiz-adv-x="1449" />
+<glyph unicode="&#xcc;" horiz-adv-x="581" />
+<glyph unicode="&#xcd;" horiz-adv-x="581" />
+<glyph unicode="&#xce;" horiz-adv-x="583" />
+<glyph unicode="&#xcf;" horiz-adv-x="593" />
+<glyph unicode="&#xd1;" horiz-adv-x="1650" />
+<glyph unicode="&#xd2;" horiz-adv-x="1744" />
+<glyph unicode="&#xd3;" horiz-adv-x="1744" />
+<glyph unicode="&#xd4;" horiz-adv-x="1744" />
+<glyph unicode="&#xd5;" horiz-adv-x="1744" />
+<glyph unicode="&#xd6;" horiz-adv-x="2220" />
+<glyph unicode="&#xd8;" horiz-adv-x="1744" />
+<glyph unicode="&#xd9;" horiz-adv-x="1558" />
+<glyph unicode="&#xda;" horiz-adv-x="1558" />
+<glyph unicode="&#xdb;" horiz-adv-x="1558" />
+<glyph unicode="&#xdc;" horiz-adv-x="1558" />
+<glyph unicode="&#xdf;" horiz-adv-x="1878" />
+<glyph unicode="&#xe0;" />
+<glyph unicode="&#xe1;" />
+<glyph unicode="&#xe2;" />
+<glyph unicode="&#xe3;" />
+<glyph unicode="&#xe4;" horiz-adv-x="2205" d="M0 350q0 166 97.5 257t262.5 91h1184v11q0 127 -94 153q-29 8 -88 8h-1282v269h1366q203 0 321 -107q74 -66 101 -153q18 -66 18 -185v-694h-1526q-168 0 -264 92t-96 258zM342 354q0 -86 109 -86h1093v174h-1093q-109 0 -109 -88zM592 1331v262h776v-262h-776z" />
+<glyph unicode="&#xe5;" />
+<glyph unicode="&#xe6;" horiz-adv-x="1992" />
+<glyph unicode="&#xe7;" horiz-adv-x="1183" />
+<glyph unicode="&#xe8;" horiz-adv-x="1183" />
+<glyph unicode="&#xe9;" horiz-adv-x="1183" />
+<glyph unicode="&#xea;" horiz-adv-x="1183" />
+<glyph unicode="&#xeb;" horiz-adv-x="1183" />
+<glyph unicode="&#xec;" horiz-adv-x="483" />
+<glyph unicode="&#xed;" horiz-adv-x="483" />
+<glyph unicode="&#xee;" horiz-adv-x="546" />
+<glyph unicode="&#xef;" horiz-adv-x="505" />
+<glyph unicode="&#xf1;" horiz-adv-x="1234" />
+<glyph unicode="&#xf2;" />
+<glyph unicode="&#xf3;" />
+<glyph unicode="&#xf4;" />
+<glyph unicode="&#xf5;" />
+<glyph unicode="&#xf6;" horiz-adv-x="2220" d="M14 422v332q0 176 125 300t299 124h1098q176 0 300 -124t124 -300v-332q0 -174 -124 -299t-300 -125h-1098q-174 0 -299 125t-125 299zM367 455q0 -72 51 -123t123 -51h876q72 0 123 51t51 123v282q0 72 -51 123t-123 51h-876q-72 0 -123 -51t-51 -123v-282zM592 1331 v262h776v-262h-776z" />
+<glyph unicode="&#xf7;" horiz-adv-x="1658" d="M0 672v250l1540 -2v-250zM664 250v252h249v-252h-249zM664 1094v249h249v-249h-249z" />
+<glyph unicode="&#xf8;" horiz-adv-x="1302" />
+<glyph unicode="&#xf9;" horiz-adv-x="1234" />
+<glyph unicode="&#xfa;" horiz-adv-x="1234" />
+<glyph unicode="&#xfb;" horiz-adv-x="1234" />
+<glyph unicode="&#xfc;" horiz-adv-x="2113" d="M0 348v791h342v-733q0 -121 119 -121h1036v854h342v-1139h-1433q-209 0 -307.5 108.5t-98.5 239.5zM582 1331v262h776v-262h-776z" />
+<glyph unicode="&#xff;" horiz-adv-x="1234" />
+<glyph unicode="&#x152;" horiz-adv-x="2568" />
+<glyph unicode="&#x153;" horiz-adv-x="2004" />
+<glyph unicode="&#x178;" horiz-adv-x="1593" />
+<glyph unicode="&#x2c6;" horiz-adv-x="1024" />
+<glyph unicode="&#x2000;" horiz-adv-x="953" />
+<glyph unicode="&#x2001;" horiz-adv-x="1907" />
+<glyph unicode="&#x2002;" horiz-adv-x="953" />
+<glyph unicode="&#x2003;" horiz-adv-x="1907" />
+<glyph unicode="&#x2004;" horiz-adv-x="635" />
+<glyph unicode="&#x2005;" horiz-adv-x="476" />
+<glyph unicode="&#x2006;" horiz-adv-x="317" />
+<glyph unicode="&#x2007;" horiz-adv-x="317" />
+<glyph unicode="&#x2008;" horiz-adv-x="238" />
+<glyph unicode="&#x2009;" horiz-adv-x="381" />
+<glyph unicode="&#x200a;" horiz-adv-x="105" />
+<glyph unicode="&#x2010;" horiz-adv-x="1611" d="M0 633v330l1356 -2v-330z" />
+<glyph unicode="&#x2011;" horiz-adv-x="1611" d="M0 633v330l1356 -2v-330z" />
+<glyph unicode="&#x2012;" horiz-adv-x="1611" d="M0 633v330l1356 -2v-330z" />
+<glyph unicode="&#x2013;" horiz-adv-x="1193" />
+<glyph unicode="&#x2014;" horiz-adv-x="2217" d="M0 633v330h2050v-330h-2050z" />
+<glyph unicode="&#x2018;" horiz-adv-x="391" />
+<glyph unicode="&#x2019;" horiz-adv-x="444" />
+<glyph unicode="&#x201c;" horiz-adv-x="1280" d="M0 1366h539v272h-373v228q-45 -16 -76 -45q-90 -82 -90 -183v-272zM633 1366h538v272h-372v228q-43 -16 -76 -45q-90 -80 -90 -183v-272z" />
+<glyph unicode="&#x201d;" horiz-adv-x="1318" d="M0 1593h373v-227q37 14 76 47q90 78 90 180v273h-539v-273zM633 1593h373v-227q39 14 75 47q90 78 90 180v273h-538v-273z" />
+<glyph unicode="&#x2022;" horiz-adv-x="911" />
+<glyph unicode="&#x2026;" horiz-adv-x="1376" />
+<glyph unicode="&#x202f;" horiz-adv-x="381" />
+<glyph unicode="&#x2039;" horiz-adv-x="454" />
+<glyph unicode="&#x203a;" horiz-adv-x="399" />
+<glyph unicode="&#x205f;" horiz-adv-x="476" />
+<glyph unicode="&#x2122;" horiz-adv-x="2562" />
+<glyph unicode="&#x25fc;" horiz-adv-x="1136" d="M0 0v1137h1137v-1137h-1137z" />
+</font>
+</defs></svg> 

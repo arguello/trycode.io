@@ -158,7 +158,7 @@
         extern.reset = function(){
             var welcome = (typeof config.welcomeMessage != 'undefined');
             inner.parent().fadeOut(function(){
-                inner.find('div').each(function(){
+                inner.find('div, img, br').each(function(){
                     if (!welcome) {
                         $(this).remove();
 		                } else {

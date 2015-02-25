@@ -1,0 +1,52 @@
+@import url(//fonts.googleapis.com/css?family=Oswald:400,700,400italic);
+@import url(//fonts.googleapis.com/css?family=Merriweather:400,700,700italic,900,900italic,400italic&subset=latin,latin-ext);
+@font-face {font-family: 'envy_code_ritalic';src: url('/font/envy_code_r_italic-webfont.eot');src: url('/font/envy_code_r_italic-webfont.eot?#iefix') format('embedded-opentype'),url('/font/envy_code_r_italic-webfont.woff2') format('woff2'),url('/font/envy_code_r_italic-webfont.woff') format('woff'),url('/font/envy_code_r_italic-webfont.ttf') format('truetype'),url('/font/envy_code_r_italic-webfont.svg#envy_code_ritalic') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'envy_code_rregular';src: url('/font/envy_code_r-webfont.eot');src: url('/font/envy_code_r-webfont.eot?#iefix') format('embedded-opentype'),url('/font/envy_code_r-webfont.woff2') format('woff2'),url('/font/envy_code_r-webfont.woff') format('woff'),url('/font/envy_code_r-webfont.ttf') format('truetype'),url('/font/envy_code_r-webfont.svg#envy_code_rregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'envy_code_rbold';src: url('/font/envy_code_r_bold-webfont.eot');src: url('/font/envy_code_r_bold-webfont.eot?#iefix') format('embedded-opentype'),url('/font/envy_code_r_bold-webfont.woff2') format('woff2'),url('/font/envy_code_r_bold-webfont.woff') format('woff'),url('/font/envy_code_r_bold-webfont.ttf') format('truetype'),url('/font/envy_code_r_bold-webfont.svg#envy_code_rbold') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'spacemanregular';src: url('/font/spaceman-webfont.eot');src: url('/font/spaceman-webfont.eot?#iefix') format('embedded-opentype'),url('/font/spaceman-webfont.woff2') format('woff2'),url('/font/spaceman-webfont.woff') format('woff'),url('/font/spaceman-webfont.ttf') format('truetype'),url('/font/spaceman-webfont.svg#spacemanregular') format('svg');font-weight: normal;font-style: normal;}
+.row {display: table;}
+[class*="col-"] {float: none;display: table-cell;vertical-align: middle;}
+#trycode {color:#cb4b16;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:0.8em;margin:0;padding:0;}
+#trycode h1 {color:#586e75;font-family:'spacemanregular';font-size:16px;text-align:center;margin:5px 0 0 0;padding:0;}
+#main {background-color:#eee8d5;margin:0;padding:0;border-top:3px solid #073642;}
+#guide {position:relative;font-family:'Merriweather', sans-serif;font-size:1.1em;color:#586e75;padding:.25em .5em;height:802px}
+#guide h3 {font-family:'Oswald', sans-serif;font-size:1.7em;font-weight:400;line-height:1.1;color:#d33682;text-align:center;padding-top:25px;padding-bottom:10px;}
+#guide h4 {color:#839496;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:15px;text-align:center;padding-bottom:15px;opacity:0.5;}
+#guide ul {list-style-type:none;position:relative;margin-left:1em;padding-left:1em}
+#guide li:before {content:"\00bb";position:absolute;left:-1em;color:#859900;margin-right:1%;margin-top:1%;font-size:80%}
+#guide li:first-letter {font-weight: bold;color: red;}
+#guide li span {font-size:100%}
+#guide a {color:#dc322f;text-decoration:none;}
+#guide a:hover a:focus {text-decoration:none;}
+#guide code {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#268bd2;background-color:#fdf6e3;font-size:95%;}
+#guide code.expr {}
+#guide small {font-family:'Merriweather', sans-serif;font-size:80%;}
+#info {position:absolute;bottom:0;right:0;font-family:inherit;color:#657b83;font-size:15px;height:212px;line-height:212px;display:inline-block;border-top:1px dashed #859900;;border-bottom: 1px dashed #859900}
+#info span {display:inline-block;vertical-align:middle;text-align:center;line-height:1.45em;word-wrap:break-word;}
+#info span:first-line{font-family:inherit;font-size:1.8em;line-height:1.45em;}
+#info a {color:#dc322f;text-decoration:none;}
+#info a:hover a:focus {text-decoration:none;}
+#copy {font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;text-align:center;color:#586e75;height:75px;padding:1.25em 0}
+#console {background-color:#fdf6e3;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:1.15em;}
+#console div.jquery-console-nofocus {opacity:0.7;}
+#console div.jquery-console-inner {width:100%;overflow:auto;text-align:left;line-height:1.1em;height:605px;padding:4px 15px}
+#console div.jquery-console-welcome {color:#b58900;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:.9em;margin-top:33px;margin-bottom:35px;}
+#console span.jquery-console-prompt-label {color:#268bd2;font-size:1.2em;font-family:"Courier New", monospace;}
+#console div.jquery-console-prompt-box {color:#586e75;white-space:pre;padding-top:.25em;}
+#console div.jquery-console-inner img {padding:.3em 0 0 1.5em;}
+#console div.jquery-console-message-value {color:#00995b;padding:.3em 0 0 1.5em;}
+#console div.jquery-console-focus span.jquery-console-cursor {background:#aaa;color:#eee8d5;font-weight:normal;opacity:0.4;}
+#console div.jquery-console-message-error {color:#dc322f;padding:.3em 0 0 1em;}
+#console div.jquery-console-message-success {color:#859900;padding:.3em 0 0 1em;}
+#commands {background-color:#fdf6e3;font-family:'Merriweather',sans-serif;font-size:.9em;color:#586e75;padding:4px 15px;}
+#commands h4 {color:#268bd2;font-family:'Oswald', sans-serif;font-size:25px;font-weight:400;line-height:1.1;margin-top:5px;margin-bottom:15px;}
+#commands ul {list-style-type:none;margin:0;padding:0}
+#commands ul li {list-style-type:none;margin:0;padding:0 0 1px 0}
+#commands code {font-family:'envy_code_rregular',Menlo,Monaco,Consolas,"Courier New", monospace;font-size:95%;}
+#icons {background-color:#eee8d5;word-spacing:20px;text-align:center;height:75px;padding:1.25em 0;}
+.arrow {font-family:'envy_code_rregular',Menlo,Monaco,Consolas,"Courier New", monospace;  font-size: 15px;  color:#cb4b16;  padding:0 10px 0 10px;}
+.blue {color:#268bd2;}
+.red {color:#dc322f;}
+.orange {color:#cb4b16}
+.green {color:#298026}
+.paddington {padding: 0 15px 0 0 !important;margin: 0 !important;}

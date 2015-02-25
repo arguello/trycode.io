@@ -102,7 +102,6 @@ function doCommand(input) {
     	case 'reset':
     		goToPage(0);
 				controller.reset()
-				controller.notice('','fadeout');
       	return true;
     default:
         return false;
@@ -162,7 +161,6 @@ function onHandle(line, report) {
 	// clear console, save history
 	if (input == 'clear') {
 		controller.reset()
-		controller.notice('','fadeout');
 		return;
 	} else if (parensBalanced(input) == false) {
 		controller.continuedPrompt = true;
@@ -198,7 +196,6 @@ function onHandle(line, report) {
 		return results;
 	}
 }
-
 
 /**
  * This should be called anytime the guide div is updated so it can rebind event listeners.

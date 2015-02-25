@@ -1,0 +1,13 @@
+<h3>Funky Functions</h3>
+<h4>(λ)</h4>
+<p>A function is a named program fragment that "knows" how to perform a defined task.</p> 
+<p>In <code>(circle 10)</code>, the function name is <strong>circle</strong>, and the argument is <strong>10</strong>. When you <em>pass</em> the argument to the circle function, the function "knows" to draw a 10 pixel circle.</p>
+<p>There's also a rectangle function that takes two arguments instead of one:</p>
+<p><code class="expr">(rectangle 10 20)</code></p>
+<p>Try giving <code>circle</code> the wrong number of arguments, just to see what happens:</p>
+<p><code class="expr">(circle 10 20)</code></p>
+<p>In addition to basic picture constructors like <code>circle</code> and <code>rectangle</code>, there’s a function that combines pictures:</p>
+<p><code class="expr">(hc-append (circle 10) (rectangle 10 20))</code></p>
+<aside id="info">
+  <span><font class="red">Racket</font> is a full-spectrum programming language. It is a descendent of a language called Scheme, which in turn is a descendent of Lisp.</span>
+</aside>

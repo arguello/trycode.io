@@ -1,0 +1,7 @@
+#!/bin/sh
+
+SETUIDGID=`command -v setuidgid`
+MULTILOG=`command -v multilog`
+
+exec 2>&1
+exec $SETUIDGID trycode $MULTILOG t s10485760 n5 '!tai64nlocal' /var/log/trycode.io

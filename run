@@ -1,0 +1,6 @@
+#!/bin/sh
+
+SETUIDGID=`command -v setuidgid`
+RACKET=`command -v racket`
+
+exec $SETUIDGID trycode $RACKET /srv/trycode.io/trycode/main.rkt

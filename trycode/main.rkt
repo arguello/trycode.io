@@ -28,8 +28,9 @@
 (find-dll-dir)
 
 ;; Paths
-(define autocomplete 
-  (build-path (current-directory) "autocomplete.rkt"))
+(define-runtime-path trycode ".")
+(define autocomplete
+  (build-path trycode "autocomplete.rkt"))
 
 ;;------------------------------------------------------------------
 ;; sandbox
@@ -49,7 +50,7 @@
                             json
                             setup/dirs))]
                  [sandbox-path-permissions '((read #rx#"racket-prefs.rktd"))])
-    ((lambda () 
+    ((lambda ()
        (make-evaluator 'racket/base
                        #:requires `(pict
                                     pict/flash
@@ -62,7 +63,7 @@
 
 (define (run-code ev str)
   (define reses ; Gather results into a list
-    (call-with-values (λ () (ev str)) (λ xs xs))) 
+    (call-with-values (λ () (ev str)) (λ xs xs)))
   (define out (get-output ev))
   (define err (get-error-output ev))
   (for/list ([res reses])
@@ -77,9 +78,9 @@
                            (and (not (equal? err "")) err))])))
 
 (define (complete-code ev str)
-  (define res (ev  `(jsexpr->string (namespace-completion ,str)))) 
+  (define res (ev  `(jsexpr->string (namespace-completion ,str))))
   (define out (get-output ev))
-  (define err (get-error-output ev))  
+  (define err (get-error-output ev))
   (list (list (if (void? res) "" res)
               (and (not (equal? out "")) out)
               (and (not (equal? err "")) err))))
@@ -89,26 +90,24 @@
 ;;------------------------------------------------------------------
 (define-values (dispatch urls)
     (dispatch-rules
-     [("") home]
-     [("home") home]
-     [("links") links]
-     [("about") about]
+     [("") index]
+     [("index") index]
      [("tutorial") #:method "post" tutorial]))
 
 ;;------------------------------------------------------------------
 ;; Responses
 ;;------------------------------------------------------------------
 ;; make-response : ... string -> response
-(define (make-response 
+(define (make-response
          #:code [code 200]
          #:message [message #"OK"]
          #:seconds [seconds (current-seconds)]
-         #:mime-type [mime-type TEXT/HTML-MIME-TYPE] 
+         #:mime-type [mime-type TEXT/HTML-MIME-TYPE]
          #:headers [headers (list (make-header #"Cache-Control" #"no-cache"))]
          content)
-  (response/full code message seconds mime-type headers 
+  (response/full code message seconds mime-type headers
                  (list (string->bytes/utf-8 content))))
-          
+
 ;;------------------------------------------------------------------
 ;; Request Handlers
 ;;------------------------------------------------------------------
@@ -117,43 +116,37 @@
   (define page (dict-ref (request-bindings request) 'page #f))
   (make-response
    (match page
-     ("intro" (include-template "templates/tutorial/intro.html"))
-     ("go" (include-template "templates/tutorial/go.html"))
-     ("definitions" (include-template "templates/tutorial/definitions.html"))
-     ("binding" (include-template "templates/tutorial/binding.html"))
-     ("functions" (include-template "templates/tutorial/functions.html"))
-     ("scope" (include-template "templates/tutorial/scope.html"))
-     ("lists" (include-template "templates/tutorial/lists.html"))
-     ("modules" (include-template "templates/tutorial/modules.html"))
-     ("macros" (include-template "templates/tutorial/macros.html"))
-     ;("objects" (include-template "templates/tutorial/objects.html"))
-     ("where" (include-template "templates/tutorial/where.html"))
-     ("end" (include-template "templates/tutorial/end.html")))))
-    
+     ("0001" (include-template "../templates/tutorial/0001.html"))
+     ("0002" (include-template "../templates/tutorial/0002.html"))
+     ("0003" (include-template "../templates/tutorial/0003.html"))
+     ("0004" (include-template "../templates/tutorial/0004.html"))
+     ("0005" (include-template "../templates/tutorial/0005.html"))
+     ("0006" (include-template "../templates/tutorial/0006.html"))
+     ("0007" (include-template "../templates/tutorial/0007.html"))
+     ("0008" (include-template "../templates/tutorial/0008.html"))
+     ("0009" (include-template "../templates/tutorial/0009.html"))
+     ;;("functions" (include-template "../templates/tutorial/functions.html"))
+     ;;("scope" (include-template "../templates/tutorial/scope.html"))
+     ;;("lists" (include-template "../templates/tutorial/lists.html"))
+     ;;("modules" (include-template "../templates/tutorial/modules.html"))
+     ;;("macros" (include-template "../templates/tutorial/macros.html"))
+     ;("objects" (include-template "../templates/tutorial/objects.html"))
+     ;;("where" (include-template "../templates/tutorial/where.html"))
+     ("end" (include-template "../templates/tutorial/end.html")))))
 
 
-
-;; Links page
-(define (links request)
-    (make-response
-     (include-template "templates/links.html"))) 
-
-;; About page
-(define (about request)
-    (make-response
-     (include-template "templates/about.html"))) 
 
 ;; Home page
-(define (home request)
-    (home-with (make-ev) request))
-  
-(define (home-with ev request) 
+(define (index request)
+    (index-with (make-ev) request))
+
+(define (index-with ev request)
   (local [(define (response-generator embed/url)
             (let ([url (embed/url next-eval)]
                   ;[complete-url (embed/url next-complete)]
                   )
               (make-response
-               (include-template "templates/home.html"))))
+               (include-template "../templates/index.html"))))
             (define (next-eval request)
               (eval-with ev request))
             ;(define (next-complete request)(complete-with ev request))
@@ -172,9 +165,9 @@
 (define (result-json expr lsts)
   (for/list ([lst lsts])
     (match lst
-      [(list res #f #f) 
+      [(list res #f #f)
        (json-result expr res)]
-      [(list res out #f) 
+      [(list res out #f)
        (json-result expr (string-append out res))]
       [(list _ _ err)
        (json-error expr err)])))
@@ -191,33 +184,33 @@
  (define (eval-error-to-json expr)
    (match-define (list res) (result-json "" (run-code ev expr)))
    (jsexpr->string (hash-ref res 'message)))
-   
- (check-equal? 
+
+ (check-equal?
   (eval-result-to-json "(+ 3 3)") (list "\"6\""))
- (check-equal? 
+ (check-equal?
   (eval-result-to-json "(display \"6\")") (list "\"6\""))
- (check-equal? 
+ (check-equal?
   (eval-result-to-json "(write \"6\")") (list "\"\\\"6\\\"\""))
- (check-equal? 
+ (check-equal?
   (eval-result-to-json "(begin (display \"6 + \") \"6\")") (list "\"6 + \\\"6\\\"\""))
-)  
+)
 
 ;; Eval handler
-(define (eval-with ev request) 
+(define (eval-with ev request)
   (define bindings (request-bindings request))
   (cond [(exists-binding? 'expr bindings)
          (let ([expr (extract-binding/single 'expr bindings)])
-           (make-response 
+           (make-response
             #:mime-type APPLICATION/JSON-MIME-TYPE
             (jsexpr->string (result-json expr (run-code ev expr)))))]
          [(exists-binding? 'complete bindings)
           (let ([str (extract-binding/single 'complete bindings)])
-            (make-response 
+            (make-response
              #:mime-type APPLICATION/JSON-MIME-TYPE
-             (jsexpr->string 
+             (jsexpr->string
               (car (result-json "" (complete-code ev str))))))]
         [else (make-response #:code 400 #:message #"Bad Request" "")]))
-      
+
 
 
 ;;------------------------------------------------------------------
@@ -229,23 +222,23 @@
 
 (define (expiration-handler req)
   (if (ajax? req)
-      (make-response 
+      (make-response
        #:mime-type APPLICATION/JSON-MIME-TYPE
-       (jsexpr->string 
+       (jsexpr->string
         (json-error "" "Sorry, your session has expired. Please reload the page.")))
       (response/xexpr
       `(html (head (title "Page Has Expired."))
              (body (p "Sorry, this page has expired. Please reload the page."))))))
 
 
-(define-runtime-path static "./static")
+(define-runtime-path static "../static")
 
 (define mgr
   (make-threshold-LRU-manager expiration-handler (* 256 1024 1024)))
 ;  (create-LRU-manager expiration-handler 5 60
 ;   (lambda ()
 ;     (define memory-use (current-memory-use))
-;     (define collect? 
+;     (define collect?
 ;       (or (>= memory-use (* 256 1024 1024)) (< memory-use 0)))
 ;     collect?)
 ;   #:initial-count 15
@@ -254,17 +247,15 @@
 (module+ main
   (serve/servlet
    dispatch
-   #:stateless? #f       
+   #:stateless? #f
    #:launch-browser? #f
    #:connection-close? #t
-   #:quit? #f 
-   #:listen-ip #f 
+   #:quit? #f
+   #:listen-ip #f
    #:port 8080
    #:servlet-regexp #rx""
    #:extra-files-paths (list static)
    #:servlet-path "/"
    #:manager mgr
-   #:log-file "try-racket-serve-log.txt"))
-
-
-
+   #:log-file "/var/log/trycode.io/trycode_srv.log"
+   #:log-format 'extended))

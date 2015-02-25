@@ -2,4 +2,5 @@
 *~
 try-racket-serve-log.txt
 *.bak
-compiled/*
+trycode/compiled/*
+resources

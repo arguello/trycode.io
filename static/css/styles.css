@@ -36,7 +36,7 @@
 #console div.jquery-console-inner img {padding:.3em 0 0 1.5em;}
 #console div.jquery-console-message-value {color:#00995b;padding:.3em 0 0 1.5em;}
 #console div.jquery-console-focus span.jquery-console-cursor {background:#aaa;color:#eee8d5;font-weight:normal;opacity:0.4;}
-#console div.jquery-console-message-error {color:#dc322f;padding:.3em 0 0 1em;}
+#console div.jquery-console-message-error {color:#dc322f;padding:.3em 0 0 1em;white-space:pre}
 #console div.jquery-console-message-success {color:#859900;padding:.3em 0 0 1em;}
 #commands {background-color:#fdf6e3;font-family:'Merriweather',sans-serif;font-size:.9em;color:#586e75;padding:4px 15px;}
 #commands h4 {color:#268bd2;font-family:'Oswald', sans-serif;font-size:25px;font-weight:400;line-height:1.1;margin-top:5px;margin-bottom:15px;}

@@ -653,8 +653,6 @@ font-size:100%;
 color:#268bd2;
 white-space:pre;
 background-color:#eee8d5;
-/* border:1px solid #c2c2c2;
-border-radius:1px */
 }
 pre
 {
@@ -667,8 +665,6 @@ color:#333;
 word-break:break-all;
 word-wrap:break-word;
 background-color:#f5f5f5;
-border:1px solid #ccc;
-border-radius:4px
 }
 pre code
 {

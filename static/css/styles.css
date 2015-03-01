@@ -18,6 +18,7 @@
 #guide li span {font-size:100%}
 #guide a {color:#dc322f;text-decoration:none;}
 #guide a:hover a:focus {text-decoration:none;}
+#guide pre {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#268bd2;background-color:#fdf6e3;font-size:95%;padding:2px 4px;}
 #guide code {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#268bd2;background-color:#fdf6e3;font-size:95%;}
 #guide code.expr {}
 #guide small {font-family:'Merriweather', sans-serif;font-size:80%;}

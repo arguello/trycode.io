@@ -13,7 +13,7 @@
 #guide h3 {font-family:'Oswald', sans-serif;font-size:1.8em;font-weight:400;line-height:1.1;color:#d33682;text-align:center;padding-top:25px;padding-bottom:10px;}
 #guide h4 {color:#839496;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:15px;text-align:center;padding-bottom:15px;opacity:0.5;}
 #guide ul {list-style-type:none;position:relative;margin-left:1em;padding-left:1em}
-#guide li:before {content:"\00bb";position:absolute;left:-1em;color:#859900;margin-right:1%;margin-top:1%;font-size:80%}
+#guide li:before {content:"\00bb";position:absolute;left:-1em;color:#859900;margin-right:1%}
 #guide li span {font-size:100%}
 #guide a {color:#dc322f;text-decoration:none;}
 #guide a:hover a:focus {text-decoration:none;}

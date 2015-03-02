@@ -31,7 +31,7 @@
 #console div.jquery-console-nofocus {opacity:0.7;}
 #console div.jquery-console-inner {width:100%;overflow:auto;text-align:left;line-height:1.1em;height:605px;padding:4px 15px}
 #console div.jquery-console-welcome {color:#b58900;font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;font-size:.9em;margin-top:33px;margin-bottom:35px;}
-#console span.jquery-console-prompt-label {color:#268bd2;font-size:1.2em;font-family:"Courier New", monospace;}
+#console span.jquery-console-prompt-label {color:#268bd2;font-size:1.2em}
 #console div.jquery-console-prompt-box {color:#586e75;white-space:pre;padding-top:.25em;}
 #console div.jquery-console-inner img {padding:.3em 0 0 1.5em;}
 #console div.jquery-console-message-value {color:#00995b;padding:.3em 0 0 1.5em;}

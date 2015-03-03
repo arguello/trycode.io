@@ -1,10 +1,19 @@
-<h3>The Cosmos Awaits</h3>
+<h3>The Bigger They Are...</h3>
 <h4>(λ)</h4>
-<p>Prime number great turbulent clouds kindling the energy hidden in matter, prime number take root and flourish. Citizens of distant epochs explorations vanquish the impossible, network of wormholes!</p>
-<p>A mote of dust suspended in a sunbeam <font class="red"><strong>Cambrian</strong></font> explosion, bits of moving fluff!<p>
-<p>Explorations of brilliant syntheses, cosmic ocean decipherment! Prime number, extraordinary claims require extraordinary evidence paroxysm of global death!</p>
-<p>White dwarf. Trillion cosmic ocean at the edge of forever! </p>
-<p>Network of wormholes vastness is bearable only through love, take root and flourish colonies.</p>
+<p>The <code>bigger</code> function works in the same manner as <code>smaller</code>, except that it "kills" the lower limit.</p>
+<p>Go ahead and type this in the interactions panel:<pre><code class="expr">(define (bigger)
+  (set! lower (min upper (add1 (guess))))
+  (guess))</code></pre></p>
+<p>Now type <code class="expr">lower</code> in the interaction panel. It should return the lower limit that we initially set: <code><font class="green">1</font></code></p>
+<p>Now type: <code class="expr">(bigger)</code>, and again type: <code class="expr">lower</code></p>
+<p>So, the <code>set!</code> expression in <code>bigger</code>:
+  <ul>
+    <li><span>increments the value returned by <code>guess</code>: <code class="expr">(add1 (guess))</code></span></li>
+    <li><span>uses the <code>min</code> function to return the smallest of <code class="expr">upper</code> and <code>(add1 (guess))</code></span></li>
+    <li><span>assigns the result of <code>min</code> to <code>lower</code>, setting a new lower limit</span></li>
+  </ul></p>
+  <p>The <code>bigger</code> function administers the coup de grâce by calling the <code>(guess)</code> function.</p>
+  <p>OK, good show. Let's get some <code class="expr">popcorn</code>.</p>
 <aside id="info">
-  <span>The <font class="red">Cambrian</font> is the first geological period of the Paleozoic Era,[5] lasting from 541.0 ± 1.0 to 485.4 ± 1.9 million years ago (mya).</span>
+  <span><font class="red">bigger</font> and <font class="red">smaller</font><br> are functions that contain functions. <code>bigger</code> and <code>smaller</code> are the <em>enclosing functions</em>, and the functions defined inside of them are called <em>nested functions</em>.</span>
 </aside>

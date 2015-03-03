@@ -1,10 +1,16 @@
-<h3>The Cosmos Awaits</h3>
+<h3>Functions for Closing In</h3>
 <h4>(λ)</h4>
-<p>Prime number great turbulent clouds kindling the energy hidden in matter, prime number take root and flourish. Citizens of distant epochs explorations vanquish the impossible, network of wormholes!</p>
-<p>A mote of dust suspended in a sunbeam <font class="red"><strong>Cambrian</strong></font> explosion, bits of moving fluff!<p>
-<p>Explorations of brilliant syntheses, cosmic ocean decipherment! Prime number, extraordinary claims require extraordinary evidence paroxysm of global death!</p>
-<p>White dwarf. Trillion cosmic ocean at the edge of forever! </p>
-<p>Network of wormholes vastness is bearable only through love, take root and flourish colonies.</p>
+<p>Notice that the result was <font class="green">50</font> - exactly half of <code class="expr">lower</code> and <code class="expr">upper</code>. That's binary search in action.</p>
+<p>Now that we've defined our <code>(guess)</code> function; we need to write the functions for <code>smaller</code> and <code>bigger</code>.
+<p>Like <code>guess</code>, these functions are defined with the <code>define</code> form. Let's start with <code>smaller</code>:</p>
+<p><pre><code class="expr">(define (smaller)
+  (set! upper (max lower (sub1 (guess))))
+  (guess))</code></pre></p>
+<p>Like <code>(guess)</code>, we wrap the function name <code>smaller</code> in parens because it takes no parameters.</p>
+<p>Second, the function body consists of two expressions, one per line.</p>
+<p>Third, the function uses a <code>set!</code> expression to change the value of a variable.</p>
+<p>The purpose of <code>set!</code>, pronounced <font class="red">set bang</font>, is to <em>evaluate</em> the expression and set the <em>variable</em> to the resulting value.</p>
+<p>Go ahead and type: <code class="expr">bang bang</code></p>
 <aside id="info">
-  <span>The <font class="red">Cambrian</font> is the first geological period of the Paleozoic Era,[5] lasting from 541.0 ± 1.0 to 485.4 ± 1.9 million years ago (mya).</span>
+  <span>the bang in <font class="red">set bang</font> refers to the exclamation mark: <strong>!</strong> The term has it's roots in comics, where <em>Bang</em> was usually emphasized by an exclamation mark. In computing, people prefer to say the short, cool sounding word <strong>bang!</strong> over the five-syllable phrase <em>exclamation mark</em>.</span>
 </aside>

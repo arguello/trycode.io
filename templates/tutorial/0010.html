@@ -1,10 +1,16 @@
-<h3>The Cosmos Awaits</h3>
+<h3>Welcome to the Main Event</h3>
 <h4>(λ)</h4>
-<p>Prime number great turbulent clouds kindling the energy hidden in matter, prime number take root and flourish. Citizens of distant epochs explorations vanquish the impossible, network of wormholes!</p>
-<p>A mote of dust suspended in a sunbeam <font class="red"><strong>Cambrian</strong></font> explosion, bits of moving fluff!<p>
-<p>Explorations of brilliant syntheses, cosmic ocean decipherment! Prime number, extraordinary claims require extraordinary evidence paroxysm of global death!</p>
-<p>White dwarf. Trillion cosmic ocean at the edge of forever! </p>
-<p>Network of wormholes vastness is bearable only through love, take root and flourish colonies.</p>
+<p>Everything we've done 'til now, the sacrifices we've forced upon <code>lower</code> and <code>upper</code>, have led us to:</p>
+<h5>The Main Function</h5>
+<p>It is practical to have one main function that starts - or restarts - the whole application.</p>
+<p>This is a simple feat for Guess My Number:</p>
+<p><pre><code class="expr">(define (start n m)
+  (set! lower (min n m))
+  (set! upper (max n m))
+  (guess))</code></pre></p>
+<p>As you now know, <code>start</code> takes two arguments, which are the numbers we want to set as the <code>lower</code> and <code>upper</code> limits.</p>
+<p>By using the <code>max</code> and <code>min</code> functions, we cut down on the instructions that we need to give any player.</p>
+<p>A player simply needs to put in any two numbers in any order, and the function can determine the lower and upper limits. Try it by typing: <code class="expr">(start 30 1)</code></p>
 <aside id="info">
-  <span>The <font class="red">Cambrian</font> is the first geological period of the Paleozoic Era,[5] lasting from 541.0 ± 1.0 to 485.4 ± 1.9 million years ago (mya).</span>
+  <span><font class="red">NOTE</font><br>As we continue to more challenging games, you will see how a main function makes our games much more user friendly.</span>
 </aside>

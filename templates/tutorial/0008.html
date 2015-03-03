@@ -1,10 +1,21 @@
-<h3>The Cosmos Awaits</h3>
+<h3>The Church Bells Rang</h3>
 <h4>(λ)</h4>
-<p>Prime number great turbulent clouds kindling the energy hidden in matter, prime number take root and flourish. Citizens of distant epochs explorations vanquish the impossible, network of wormholes!</p>
-<p>A mote of dust suspended in a sunbeam <font class="red"><strong>Cambrian</strong></font> explosion, bits of moving fluff!<p>
-<p>Explorations of brilliant syntheses, cosmic ocean decipherment! Prime number, extraordinary claims require extraordinary evidence paroxysm of global death!</p>
-<p>White dwarf. Trillion cosmic ocean at the edge of forever! </p>
-<p>Network of wormholes vastness is bearable only through love, take root and flourish colonies.</p>
+<p>We're going to "kill" our current upper limit. We need a newer, fresher upper limit.</p>
+<p>Go ahead and type <code class="expr">upper</code> in the interaction panel.</p>
+<p>It should return the upper limit that we set: <code><font class="green">100</font></code></p>
+<p>Now type: <code class="expr">(smaller)</code>, and again type: <code class="expr">upper</code></p>
+<p>So, our weapon of choice, the <code>set!</code> expression in the <code>smaller</code> function:</p>
+<p><pre><code class="expr">(define (smaller)
+  (set! upper (max lower (sub1 (guess))))
+  (guess))</code></pre>
+  <ul>
+    <li><span>decrements the value returned by <code>guess</code>: <code class="expr">(sub1 (guess))</code></span></li>
+    <li><span>uses the <code>max</code> function to return the largest of <code class="expr">lower</code> and <code>(sub1 (guess))</code></span></li>
+    <li><span>assigns the result of <code>max</code> to <code>upper</code>, setting a new upper limit</span></li>
+  </ul>
+</p>
+<p>The <code>smaller</code> function hammers the final nail into the coffin by placing a <font class="red">call</font> to <code>(guess)</code>.</p>
+<p>Take some time to mourn, then type: <code class="expr">brutal</code></p>
 <aside id="info">
-  <span>The <font class="red">Cambrian</font> is the first geological period of the Paleozoic Era,[5] lasting from 541.0 ± 1.0 to 485.4 ± 1.9 million years ago (mya).</span>
+  <span>in programming, <font class="red">call</font><br>means to invoke a routine. A routine that invokes another routine is sometimes referred to as the <em>calling routine</em>. The routine that is invoked is referred to as the <em>called routine.</em></span>
 </aside>

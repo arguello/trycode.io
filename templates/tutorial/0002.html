@@ -1,13 +1,23 @@
 <h3>Funky Functions</h3>
 <h4>(λ)</h4>
-<p>A function is a named program fragment that "knows" how to perform a defined task.</p> 
-<p>In <code>(circle 10)</code>, the function name is <strong>circle</strong>, and the argument is <strong>10</strong>. When you <em>pass</em> the argument to the circle function, the function "knows" to draw a 10 pixel circle.</p>
-<p>There's also a rectangle function that takes two arguments instead of one:</p>
-<p><code class="expr">(rectangle 10 20)</code></p>
-<p>Try giving <code>circle</code> the wrong number of arguments, just to see what happens:</p>
-<p><code class="expr">(circle 10 20)</code></p>
-<p>In addition to basic picture constructors like <code>circle</code> and <code>rectangle</code>, there’s a function that combines pictures:</p>
-<p><code class="expr">(hc-append (circle 10) (rectangle 10 20))</code></p>
+<p>The <code>sqrt</code> function requires a <em>parameter</em>:</p>
+<p><code>(sqrt <em>parameter</em>)</code></p>
+<p>The term <em>parameter</em> refers to the variable as found in the function <font class="red">definition</font>.</p>
+<p>When we pass an actual value or expression, we call it an <em>argument</em>. So, in the function <code>(sqrt 144):</code>
+  <ul>
+    <li><span>the function name is: <strong>sqrt</strong></span></li>
+    <li><span>the argument is: <strong>144</strong></span></li>
+  </ul>
+</p>
+<p>When you <em>pass</em> the argument <code>144</code> to the <code>sqrt</code> function, the function "knows" to calculate the square root of 144.</p>
+<p>You can also pass a function as an argument:</p>
+<p><code class="expr">(sqrt (expt 12 2))</code></p>
+<p>The <code>expt</code> function "knows" to raise it's first argument <code>12</code> to the power of it's 2nd argument: <code>2</code></p>
+<p>The <code>sqrt</code> function then calculates the square root of the resulting value. Try: <code class="expr">(expt (sqrt 144) (/ 4 2))</code></p>
+
 <aside id="info">
-  <span><font class="red">Racket</font> is a full-spectrum programming language. It is a descendent of a language called Scheme, which in turn is a descendent of Lisp.</span>
+  <span>parameter and <font class="red">argument</font><br> are terms sometimes used interchangeably in programming. The term parameter is often used to refer to the variable as found in the function definition, while argument refers to the actual value passed to the function.</span>
 </aside>
+<!-- <aside id="info">
+  <span><font class="red">Racket</font> is a full-spectrum programming language. It is a descendent of a language called Scheme, which in turn is a descendent of Lisp.</span>
+</aside> -->

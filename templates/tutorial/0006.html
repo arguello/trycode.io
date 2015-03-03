@@ -1,10 +1,24 @@
-<h3>The Cosmos Awaits</h3>
+<h3>Divide and Conquer</h3>
 <h4>(λ)</h4>
-<p>Prime number great turbulent clouds kindling the energy hidden in matter, prime number take root and flourish. Citizens of distant epochs explorations vanquish the impossible, network of wormholes!</p>
-<p>A mote of dust suspended in a sunbeam <font class="red"><strong>Cambrian</strong></font> explosion, bits of moving fluff!<p>
-<p>Explorations of brilliant syntheses, cosmic ocean decipherment! Prime number, extraordinary claims require extraordinary evidence paroxysm of global death!</p>
-<p>White dwarf. Trillion cosmic ocean at the edge of forever! </p>
-<p>Network of wormholes vastness is bearable only through love, take root and flourish colonies.</p>
+<p>As mentioned, our Guess My Number game will use a binary search <font class="red">algorithm</font> to "guess" the number.</p>
+<p>All that means is that the computer will "guess" the player's number by computing the average of the <code>lower</code> and <code>upper</code> limits.</p>
+<p>To do that, we need to define a function for guessing; type this in the interactions panel:</p>
+<p><pre><code class="expr">(define (guess)
+   (quotient (+ lower upper) 2))</code></pre></p>
+<p>Look complicated? Let's break it down:
+  <ul>
+    <li><span>the name of the function is: <code>guess</code></span></li>
+      <ul>
+        <li><span>the function won't take arguments, so we wrap the name in parentheses: <code>(guess)</code></span></li>
+      </ul>
+    <li><span>we add the <code>lower</code> and <code>upper</code> limits</span></li>
+      <ul>
+        <li><span>we use variables instead of the values <code>1</code> and <code>100</code>, so that we can change these values</span></li>
+      </ul>
+    <li><span>we then divide the resulting value by the number of arguments passed to the addition function: <code>2</code></span></li>
+  </ul>
+</p>
+<p>Now test your function by typing: <code class="expr">(guess)</code></p>
 <aside id="info">
-  <span>The <font class="red">Cambrian</font> is the first geological period of the Paleozoic Era,[5] lasting from 541.0 ± 1.0 to 485.4 ± 1.9 million years ago (mya).</span>
+  <span>an <font class="red">algorithm</font><br>is a set of steps which are followed in order to solve a mathematical problem or to complete a computer process.</span>
 </aside>

@@ -1,0 +1,27 @@
+<h3>Congratulations!</h3>
+<h4>(λ)</h4>
+<p>You wrote your first computer program!</p>
+<p>Here's your game when put together - go ahead and type <code class="expr">(guess)</code> to match wits with <font class="red">Racket</font>!</p>
+<p><pre><code class="expr">(define (start n m)
+  (set! lower (min n m))
+  (set! upper (max n m))
+  (guess))
+
+(define lower 1)
+
+(define upper 100)
+
+(define (guess)
+  (quotient (+ lower upper) 2))
+
+(define (smaller)
+  (set! upper (max lower (sub1 (guess))))
+  (guess))
+
+(define (bigger)
+  (set! lower (min upper (add1 (guess))))
+  (guess))</code></pre></p>
+<p>When you're ready, let's hit the <code class="expr">after party</code>.</p>
+<aside id="info">
+  <span><font class="red">Racket</font> is an immensely powerful programming language - we call it a multi-paradigm language because it supports multiple styles of computer programming.</span>
+</aside>

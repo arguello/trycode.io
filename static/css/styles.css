@@ -19,8 +19,8 @@
 #guide a {color:#2aa198;text-decoration:none;}
 #guide a:hover a:focus {text-decoration:none;}
 #guide pre {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#268bd2;background-color:#fdf6e3;font-size:95%;padding:0 2px;}
-#guide code {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#6c71c4;background-color:#fdf6e3;font-size:95%;padding:0 2px;}
-#guide code.expr {color:#268bd2}
+#guide code {font-family:'envy_code_rregular', Menlo, Monaco, Consolas, "Courier New", monospace;color:#268bd2;background-color:#fdf6e3;font-size:95%;padding:0 2px;}
+#guide code.expr {}
 #guide small {font-family:'Merriweather', sans-serif;font-size:80%;}
 #info {position:absolute;bottom:0;right:0;font-family:inherit;color:#657b83;height:170px;line-height:170px;display:inline-block;border-top:1px dashed #859900;;border-bottom: 1px dashed #859900}
 #info span {display:inline-block;vertical-align:middle;text-align:center;line-height:1.45em;word-wrap:break-word;}

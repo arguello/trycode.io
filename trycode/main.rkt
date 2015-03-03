@@ -16,7 +16,6 @@
           file/convertible
           net/base64
           setup/dirs
-;          racket/gui/base ; ensures that `make-ev` does not try to instantiate it multiple times
           "autocomplete.rkt"
           )
 
@@ -36,8 +35,6 @@
 ;; sandbox
 ;;------------------------------------------------------------------
 ;; make-ev : -> evaluator
-
-
 (define (make-ev)
   (parameterize ([sandbox-output 'string]
                  [sandbox-error-output 'string]
@@ -125,16 +122,9 @@
      ("0007" (include-template "../templates/tutorial/0007.html"))
      ("0008" (include-template "../templates/tutorial/0008.html"))
      ("0009" (include-template "../templates/tutorial/0009.html"))
-     ;;("functions" (include-template "../templates/tutorial/functions.html"))
-     ;;("scope" (include-template "../templates/tutorial/scope.html"))
-     ;;("lists" (include-template "../templates/tutorial/lists.html"))
-     ;;("modules" (include-template "../templates/tutorial/modules.html"))
-     ;;("macros" (include-template "../templates/tutorial/macros.html"))
-     ;("objects" (include-template "../templates/tutorial/objects.html"))
-     ;;("where" (include-template "../templates/tutorial/where.html"))
-     ("end" (include-template "../templates/tutorial/end.html")))))
-
-
+     ("0010" (include-template "../templates/tutorial/0010.html"))
+     ("0011" (include-template "../templates/tutorial/0011.html"))
+     ("0012" (include-template "../templates/tutorial/0012.html")))))
 
 ;; Home page
 (define (index request)
@@ -235,14 +225,6 @@
 
 (define mgr
   (make-threshold-LRU-manager expiration-handler (* 256 1024 1024)))
-;  (create-LRU-manager expiration-handler 5 60
-;   (lambda ()
-;     (define memory-use (current-memory-use))
-;     (define collect?
-;       (or (>= memory-use (* 256 1024 1024)) (< memory-use 0)))
-;     collect?)
-;   #:initial-count 15
-;   #:inform-p (lambda args (void))))
 
 (module+ main
   (serve/servlet

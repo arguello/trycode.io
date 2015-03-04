@@ -4,6 +4,7 @@
           web-server/templates
           web-server/dispatch
           web-server/http
+          web-server/http/xexpr
           racket/sandbox
           json
           racket/format

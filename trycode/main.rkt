@@ -39,8 +39,8 @@
   (parameterize ([sandbox-output 'string]
                  [sandbox-error-output 'string]
                  [sandbox-propagate-exceptions #f]
-                 [sandbox-memory-limit 30]
-                 [sandbox-eval-limits (list 5 30)]
+                 [sandbox-memory-limit 400]
+                 [sandbox-eval-limits (list 20 400)]
                  [sandbox-namespace-specs
                   (append (sandbox-namespace-specs)
                           `(file/convertible
